@@ -1,0 +1,107 @@
+import { useMemo } from 'react'
+
+/**
+ * ToolsMarquee
+ *
+ * Horizontally scrolling strip of brand logos + labels for the tools you work with.
+ * Only tools used in real work go here: every logo is a claim a buyer can ask about.
+ * The strip lives on the cream shader page, NOT inside a dark section.
+ *
+ * Implementation notes:
+ * - The tools list is duplicated in JSX (`doubled`) so the CSS keyframe can translate
+ *   by exactly -50% and produce a seamless loop. The halfway point lands on the seam
+ *   between the two copies, so the reset at 100% is invisible.
+ * - Icons come in two flavors:
+ *     1. Single-color simple-icons SVGs (.svg) are rendered as CSS masks tinted
+ *        via a per-item `--brand-color` custom property. This lets us ship one
+ *        black-shape file per brand and paint it with the brand color.
+ *     2. Multi-color brand marks (PNG or multi-color SVG - GoHighLevel,
+ *        Lightspeed, Claude Code, VS Code, Google Workspace) are rendered as
+ *        raw `<img>` tags because gradients/layered fills cannot be reduced to
+ *        a single silhouette.
+ *   The renderer picks the mode by whether a `color` is set: color -> mask,
+ *   no color -> img.
+ * - Brand colors live in the data layer below (not tokens.css) because they are
+ *   external brand identifiers, not part of the site palette. They are passed to
+ *   CSS via `--brand-color` custom properties so the component stylesheet stays
+ *   free of inline hex values.
+ * - Accessibility: the animated track is aria-hidden because its content is
+ *   duplicated and moving. The real semantic list sits in an sr-only <ul> so
+ *   screen readers get a clean, deduped enumeration of the tools.
+ */
+
+type Tool = {
+  name: string
+  iconPath: string
+  /** When set, the SVG silhouette is tinted via CSS mask. Omit for multi-color marks. */
+  color?: string
+}
+
+export const tools: Tool[] = [
+  { name: 'Notion', iconPath: '/icons/tools/notion.svg', color: '#000000' },
+  { name: 'Make', iconPath: '/icons/tools/make.svg', color: '#6D00CC' },
+  { name: 'Tally', iconPath: '/icons/tools/tally.svg' },
+  { name: 'Gmail', iconPath: '/icons/tools/gmail.svg', color: '#EA4335' },
+  { name: 'Google Calendar', iconPath: '/icons/tools/googlecalendar.svg', color: '#4285F4' },
+  { name: 'Google Workspace', iconPath: '/icons/googleworkspace.svg' },
+  { name: 'Calendly', iconPath: '/icons/tools/calendly.svg', color: '#006BFF' },
+  { name: 'Canva', iconPath: '/icons/tools/canva.svg' },
+  { name: 'Loom', iconPath: '/icons/tools/loom.svg', color: '#625DF5' },
+  { name: 'Fireflies', iconPath: '/icons/ai/fireflies.png' },
+  { name: 'OBS Studio', iconPath: '/icons/tools/obsstudio.svg', color: '#302E31' },
+  { name: 'Excel', iconPath: '/icons/tools/excel.svg' },
+  { name: 'PowerPoint', iconPath: '/icons/tools/powerpoint.svg' },
+  { name: 'Claude', iconPath: '/icons/tools/claude.svg', color: '#D97757' },
+  { name: 'ChatGPT', iconPath: '/icons/openai.svg', color: '#000000' },
+  { name: 'Gemini', iconPath: '/icons/tools/googlegemini.svg', color: '#8E75B2' },
+  { name: 'Perplexity', iconPath: '/icons/tools/perplexity.svg', color: '#1FB8CD' },
+  { name: 'Grammarly', iconPath: '/icons/tools/grammarly.svg', color: '#027E6F' },
+]
+
+export default function ToolsMarquee() {
+  // Duplicate the list so the -50% translate lands on a seamless seam.
+  // useMemo keeps the doubled array reference-stable across renders.
+  const doubled = useMemo(() => [...tools, ...tools], [])
+
+  return (
+    <section className="tools-marquee" aria-label="Tools I work with" data-reveal>
+      <div className="tools-marquee__track" aria-hidden="true">
+        {doubled.map((tool, i) => {
+          const useMask = tool.iconPath.endsWith('.svg') && !!tool.color
+          return (
+            <div key={`${tool.name}-${i}`} className="tools-marquee__item">
+              {useMask ? (
+                <span
+                  className="tools-marquee__icon"
+                  style={{
+                    ['--icon-url' as string]: `url('${tool.iconPath}')`,
+                    ['--brand-color' as string]: tool.color ?? 'var(--navy)',
+                  }}
+                />
+              ) : (
+                <img
+                  className="tools-marquee__img"
+                  src={tool.iconPath}
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
+                  decoding="async"
+                  width={20}
+                  height={20}
+                />
+              )}
+              <span className="tools-marquee__label">{tool.name}</span>
+            </div>
+          )
+        })}
+      </div>
+
+      {/* Real semantic list for screen readers, dedupes the visual loop. */}
+      <ul className="sr-only">
+        {tools.map((t) => (
+          <li key={t.name}>{t.name}</li>
+        ))}
+      </ul>
+    </section>
+  )
+}

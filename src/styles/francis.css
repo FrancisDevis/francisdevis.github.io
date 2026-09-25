@@ -1,0 +1,163 @@
+/* ============================================
+   FRANCIS - additions for the real content
+   Title tiles for the nine Notion systems (used until page screenshots
+   are captured), the Projects system grid, and the text testimonials.
+   ============================================ */
+
+/* ---------- Title tiles in the Home Projects reel ---------- */
+.bento__systile {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 4px;
+  padding: 12px 14px;
+  min-height: 92px;
+  background:
+    linear-gradient(160deg, color-mix(in srgb, var(--tint) 16%, #fff) 0%, #fff 70%);
+  border: 1px solid color-mix(in srgb, var(--tint) 30%, transparent);
+  border-left: 4px solid var(--tint);
+  color: #1b2333;
+  text-align: left;
+}
+.bento__systile-kind {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tint);
+}
+.bento__systile-title {
+  font-size: 12.5px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* ---------- Projects: the nine systems ---------- */
+.sysgrid {
+  display: grid;
+  gap: clamp(10px, 1vw, 14px);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 270px), 1fr));
+  align-content: start;
+}
+.syscard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 16px 14px;
+  border-radius: var(--radius-card);
+  background: var(--paper);
+  border: 1px solid var(--line-strong);
+  border-top: 4px solid var(--tint);
+  color: inherit;
+  text-decoration: none;
+  transition: transform var(--dur-med) var(--ease-spring), border-color var(--dur-med) var(--ease-out);
+}
+.syscard:hover { transform: translateY(-3px); border-color: var(--tint); }
+.syscard:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+.syscard__shot {
+  display: block;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  background: color-mix(in srgb, var(--tint) 10%, #fff);
+}
+.syscard__shot img { width: 100%; height: 100%; object-fit: cover; object-position: top left; display: block; }
+.syscard__kind {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tint);
+}
+.syscard__title { font-size: 15.5px; font-weight: 600; line-height: 1.3; color: var(--ink, inherit); }
+.syscard__catches { font-size: 13px; line-height: 1.5; opacity: 0.78; }
+.syscard__go {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--tint);
+}
+.pgrid__glass--scroll { overflow-y: auto; }
+.sysnote {
+  margin: 0 0 12px;
+  font-size: 12.5px;
+  opacity: 0.75;
+}
+
+/* ---------- Testimonials: text quotes in place of video ---------- */
+.tquote {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+  height: 100%;
+  padding: clamp(20px, 3vw, 40px);
+  border-radius: var(--radius-card);
+  background: var(--navy, #0B1E3F);
+  color: #fff;
+}
+.tquote__mark { color: var(--orange); }
+.tquote__text {
+  margin: 0;
+  font-size: clamp(16px, 1.5vw, 21px);
+  line-height: 1.5;
+  font-weight: 500;
+}
+.tquote__who { display: flex; flex-direction: column; gap: 2px; }
+.tquote__name { font-weight: 700; font-size: 15px; }
+.tquote__role { font-size: 13px; opacity: 0.75; }
+.tquote__link {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  opacity: 0.9;
+}
+
+/* ---------- Contact: booking button ---------- */
+.cgrid__book {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: var(--orange);
+  color: #fff;
+  font-weight: 600;
+  font-size: 13.5px;
+  text-decoration: none;
+  align-self: flex-start;
+}
+
+/* ---------- Phone: quote tile in place of the video thumb ---------- */
+.hproof__thumb--quote {
+  display: grid;
+  place-items: center;
+  background: var(--navy, #0B1E3F);
+  color: var(--orange);
+}
+
+/* ---------- Fixes after the first screenshot pass ---------- */
+/* A real photo, not a cut-out: show it as a circle. */
+.rail__avatar img { border-radius: 50%; object-fit: cover; -webkit-mask-image: none; mask-image: none; }
+.sysgrid { list-style: none; margin: 0; padding: 0; }
+.sysgrid > li { display: flex; }
+.sysgrid > li > .syscard { flex: 1 1 auto; }
+.tquote { overflow-y: auto; justify-content: flex-start; }
+.tquote__text { font-size: clamp(14px, 1.1vw, 16.5px); }
+.hproof__thumb--quote { width: 96px; height: 96px; aspect-ratio: 1; border-radius: 16px; flex: none; }
+/* Phone: the ledger rows must wrap, not clip. */
+.tgrid__client-body { min-width: 0; }
+.tgrid__client-role { white-space: normal; overflow-wrap: anywhere; }
+.tgrid__client-daily { white-space: normal; overflow-wrap: break-word; }
+
+/* ---------- Projects: the 3D carousel of the nine systems ---------- */
+.sysbarrel { margin: -6px 0 10px; }
