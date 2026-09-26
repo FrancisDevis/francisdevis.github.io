@@ -17,7 +17,7 @@ export const FAQS: QA[] = [
   },
   {
     q: 'How do you price?',
-    a: 'Hourly, or a fixed price for a defined build. For a fixed price I agree the scope, the number of revision rounds and how much data moves over, in writing, before I start.',
+    a: 'Hourly, or a fixed price for a defined build. For a fixed price, we agree in writing on the scope, the number of revision rounds and how much data moves over before I start.',
   },
   {
     q: 'When can you start, and what hours?',

@@ -16,6 +16,8 @@
 @media (max-width: 1099px) {
   /* clear the bottom tab bar on phones */
   .a11y { left: 14px; bottom: calc(94px + env(safe-area-inset-bottom, 0px)); }
+  /* smaller on phones so it covers less of the card underneath */
+  .a11y .a11y__button { width: 40px; height: 40px; }
 }
 
 .a11y__button {

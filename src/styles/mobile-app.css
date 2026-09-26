@@ -99,7 +99,9 @@
      for the bar plus a thumb. */
   .home,
   .pgrid { padding-top: calc(22px + env(safe-area-inset-top, 0px)); }
-  .shell__panel { padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px)); }
+  /* 96px clears the tab bar; the extra 60px lets the last row (the social icons)
+     scroll clear of the accessibility button, which sits above the bar. */
+  .shell__panel { padding-bottom: calc(156px + env(safe-area-inset-bottom, 0px)); }
   /* Inner pages float the theme switch top-right; keep the head clear of it. */
   .pgrid__head { padding-right: 56px; }
 
