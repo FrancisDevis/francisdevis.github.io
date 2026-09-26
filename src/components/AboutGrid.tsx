@@ -62,9 +62,9 @@ export default function AboutGrid() {
           </p>
 
           <p className="agrid__note">
-            <strong>Hospitality Management graduate</strong> with 600+ hours of SOP-driven operations training.
-            Since then I have run a founder's inbox from 6,081 conversations to zero and built Notion workspaces for an
-            Australian consultancy's clients. Nine of my own systems are{' '}
+            I have run a <strong>nonprofit founder's inbox</strong> from 6,081 conversations to zero, and built Notion
+            workspaces for an Australian consultancy's clients, auditing 81 pages before handover. Nine of my own systems
+            are{' '}
             <Link className="agrid__link" to="/projects">
               live on the Projects page
             </Link>

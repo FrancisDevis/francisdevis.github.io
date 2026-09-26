@@ -200,3 +200,29 @@
 @media (max-width: 1099px) {
   .agrid__portrait { height: min(46vh, 360px); padding: 0; }
 }
+
+/* ---------- About illustration: the person at the desk ---------- */
+.art-floor { fill: var(--navy); opacity: 0.07; }
+.art-chair { fill: var(--muted); opacity: 0.45; }
+.art-chair-dim { fill: var(--muted); stroke: var(--muted); opacity: 0.35; }
+.art-pants { fill: #2B3244; }
+.art-shoe { fill: #151A26; }
+.art-blazer { fill: #1C2233; stroke: var(--line-strong, rgba(11, 30, 63, 0.16)); stroke-width: 1; }
+.art-shirt { fill: #CFE0F5; }
+.art-shirt-line { stroke: #1C2233; stroke-width: 2; }
+.art-lapel { fill: #262E42; }
+.art-skin { fill: #E3AE8C; }
+.art-skin-shade { fill: #D59C79; }
+.art-hair { fill: #15171C; }
+.art-eye { fill: #15171C; }
+.art-mouth { fill: none; stroke: #9C5A48; stroke-width: 2; stroke-linecap: round; }
+.art-desk { fill: var(--navy); opacity: 0.85; }
+.art-desk-dim { fill: var(--navy); opacity: 0.5; }
+.art-screen { fill: color-mix(in srgb, var(--cream) 70%, var(--white)); }
+.art-laptop-base { fill: var(--navy); opacity: 0.75; }
+.art-stroke--sm { stroke-width: 1.8; }
+.art-tick--sm { stroke-width: 1.8; }
+.art-handle--sm { stroke-width: 8; }
+.art-lens-ring--sm { stroke-width: 6; }
+.art-float--board { animation-duration: 7s; }
+.art-float--chain { animation-duration: 5.5s; }
