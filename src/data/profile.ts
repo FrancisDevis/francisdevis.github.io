@@ -45,7 +45,7 @@ export const profile: Profile = {
   firstName: 'Francis',
   handle: '@francisrowenndevis',
   role: 'Notion Operations Specialist',
-  avatarSrc: '/francis-360.jpg',
+  avatarSrc: '/francis-avatar.webp',
   verifiedLabel: 'Identity verified on Upwork',
   email: 'francisrowennd@gmail.com',
   location: 'Tarlac City, Philippines',
@@ -58,7 +58,7 @@ export const profile: Profile = {
   displayName: { line1: 'Built to work.', line2: 'Tested to break.' },
   hero: {
     body: 'Notion Operations Specialist and Executive VA. I build client hubs, CRMs, finance trackers and SOP libraries for small businesses, each with a guide to run it and a written list of how it breaks.',
-    portraitSrc: '/francis-portrait.jpg',
+    portraitSrc: '/francis-cutout.webp',
     portraitAlt: 'Francis Rowenn Devis',
   },
   socials: [

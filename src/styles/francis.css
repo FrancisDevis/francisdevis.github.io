@@ -146,8 +146,6 @@
 }
 
 /* ---------- Fixes after the first screenshot pass ---------- */
-/* A real photo, not a cut-out: show it as a circle. */
-.rail__avatar img { border-radius: 50%; object-fit: cover; -webkit-mask-image: none; mask-image: none; }
 .sysgrid { list-style: none; margin: 0; padding: 0; }
 .sysgrid > li { display: flex; }
 .sysgrid > li > .syscard { flex: 1 1 auto; }
@@ -162,28 +160,11 @@
 /* ---------- Projects: the 3D carousel of the nine systems ---------- */
 .sysbarrel { margin: -6px 0 10px; }
 
-/* ---------- About: a real photo, not a cut-out ----------
-   The template expects a transparent figure that bleeds off the corner.
-   A normal photo with a dark background reads as a pasted box, so it
-   sits inside the sheet as a rounded card instead. */
-.agrid__portrait {
-  margin: 0;
-  align-items: center;
-  justify-content: center;
-  padding: clamp(8px, 1.5vw, 20px);
-}
+
+/* ---------- About: the cut-out fades out at the bottom ----------
+   The photo's jacket ends in a straight line; on phones that line sits
+   mid-card. A short fade dissolves it, the same way the rail avatar fades. */
 .agrid__portrait img {
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: 100%;
-  aspect-ratio: 875 / 1180;
-  object-fit: cover;
-  object-position: center top;
-  border-radius: 24px;
-  box-shadow: 0 1px 2px rgba(6, 12, 26, 0.06), 0 28px 60px -30px rgba(6, 12, 26, 0.5);
-}
-@media (max-width: 1099px) {
-  .agrid__portrait { height: min(42vh, 320px); padding: 0; }
-  .agrid__portrait img { height: 100%; width: auto; border-radius: 20px; }
+  -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
 }
