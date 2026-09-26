@@ -8,13 +8,16 @@
  * other files in src/data/ and at the top of each view component.
  */
 
+import { Database, ListChecks, Clock, type Icon } from '@/components/slab'
+
 export type SocialLink = {
   label: string
   href: string
   iconPath: string
 }
 
-export type Stat = { value: string; label: string }
+/** A proof fact on the phone's Home: a glyph, a short value, a caption. */
+export type Stat = { value: string; label: string; Icon: Icon }
 
 export type Profile = {
   name: string
@@ -50,9 +53,9 @@ export const profile: Profile = {
   email: 'francisrowennd@gmail.com',
   location: 'Tarlac City, Philippines',
   stats: [
-    { value: '9', label: 'Live Notion systems' },
-    { value: '81', label: 'Client pages audited' },
-    { value: 'GMT+8', label: 'Philippines' },
+    { value: '9', label: 'Live Notion systems', Icon: Database },
+    { value: '81', label: 'Client pages audited', Icon: ListChecks },
+    { value: 'GMT+8', label: 'Philippines', Icon: Clock },
   ],
   // The intro types this line, then flies it into the Home headline.
   displayName: { line1: 'Built to work.', line2: 'Tested to break.' },

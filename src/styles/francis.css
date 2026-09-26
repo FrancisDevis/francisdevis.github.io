@@ -137,13 +137,19 @@
   align-self: flex-start;
 }
 
-/* ---------- Phone: quote tile in place of the video thumb ---------- */
-.hproof__thumb--quote {
-  display: grid;
-  place-items: center;
-  background: var(--navy, #0B1E3F);
-  color: var(--orange);
+/* ---------- Phone: the testimonial stage carries the quote (no video exists) ---------- */
+.hproof__stage--quote {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  padding: 22px 22px 24px;
+  background: radial-gradient(120% 90% at 0% 0%, rgba(255, 122, 26, 0.22), transparent 55%), var(--navy, #0B1E3F);
+  color: #fff;
 }
+.hproof__mark { color: var(--orange); flex: none; }
+.hproof__quote { font-size: 21px; font-weight: 700; line-height: 1.25; letter-spacing: -0.015em; }
+.hproof__kicker { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange); }
 
 /* ---------- Fixes after the first screenshot pass ---------- */
 .sysgrid { list-style: none; margin: 0; padding: 0; }
@@ -151,7 +157,6 @@
 .sysgrid > li > .syscard { flex: 1 1 auto; }
 .tquote { overflow-y: auto; justify-content: flex-start; }
 .tquote__text { font-size: clamp(14px, 1.1vw, 16.5px); }
-.hproof__thumb--quote { width: 96px; height: 96px; aspect-ratio: 1; border-radius: 16px; flex: none; }
 /* Phone: the ledger rows must wrap, not clip. */
 .tgrid__client-body { min-width: 0; }
 .tgrid__client-role { white-space: normal; overflow-wrap: anywhere; }
@@ -226,3 +231,14 @@
 .art-lens-ring--sm { stroke-width: 6; }
 .art-float--board { animation-duration: 7s; }
 .art-float--chain { animation-duration: 5.5s; }
+
+/* ---------- Phone pass on the template's 26 Sept mobile update ---------- */
+@media (max-width: 1099px) {
+  /* Headline on one line: "Built to work. Tested to break." measures about
+     13.9em in the display stack at 700 / -0.024em (see mobile-pass.css §3). */
+  :root { --headline-em: 14.4; }
+  /* A long name wraps as text, so the verified tick stays beside the last word
+     instead of being pushed to the far edge. */
+  .hprofile__name { display: block; }
+  .hprofile__verified { display: inline-block; vertical-align: -3px; margin-left: 4px; }
+}
