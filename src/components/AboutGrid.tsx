@@ -1,5 +1,6 @@
 import type { CSSProperties } from 'react'
 import { Link } from 'react-router-dom'
+import AboutArt from './AboutArt'
 import { ArrowUpRight, MapPin } from '@/components/slab'
 import { profile } from '@/data/profile'
 import { LinkedinLogo } from '@/components/slab'
@@ -128,14 +129,7 @@ export default function AboutGrid() {
         </div>
 
         <div className="agrid__portrait">
-          <img
-            src={profile.hero.portraitSrc}
-            alt={profile.hero.portraitAlt}
-            loading="eager"
-            decoding="async"
-            width={400}
-            height={400}
-          />
+          <AboutArt />
         </div>
       </div>
     </section>
