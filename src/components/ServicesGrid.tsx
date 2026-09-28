@@ -5,10 +5,10 @@ import type { Icon } from '@/components/slab'
 /**
  * ServicesGrid - the Services view on one glass sheet.
  *
- * Two bands: the three-step method on a dark plate, then the five services
- * as cards carrying the marks of what each one is built with. The template's
- * live automation demo was removed: automation is not advertised until a
- * build with a written case study exists. Same object language as Home and
+ * Two bands: the three-step method on a dark plate, then the six services
+ * as cards carrying the marks of what each one is built with. Automation
+ * repair was added on 28 Sept 2026, once the lead catcher case study was
+ * live. Its bullets say only what that case study proves. Same object language as Home and
  * Projects: the glass, the bento card, plated marks, orange for the index
  * and the accent.
  *
@@ -58,6 +58,8 @@ const CALENDLY = '/icons/tools/calendly.svg'
 const GWS = '/icons/googleworkspace.svg'
 const LOOM = '/icons/tools/loom.svg'
 const FIREFLIES = '/icons/ai/fireflies.png'
+const MAKE = '/icons/tools/make.svg'
+const TALLY = '/icons/tools/tally.svg'
 
 type Service = {
   index: string
@@ -109,6 +111,14 @@ const SERVICES: Service[] = [
     logos: [GWS, FIREFLIES],
     bullets: ['Policies localised per country', 'Handover notes written from scratch', 'Checked before sign-off'],
   },
+  {
+    index: '06',
+    title: 'Automation repair',
+    description: 'Lead automations in Make, checked for what quietly breaks, then fixed and tested.',
+    chip: 'AI Automation',
+    logos: [MAKE, TALLY, NOTION, GMAIL],
+    bullets: ['Duplicate leads stopped before saving', 'A person approves every email', 'Every fix tested and written down'],
+  },
 ]
 
 /** The tool marks, stacked horizontally on white tiles (same as Projects). */
@@ -132,7 +142,7 @@ export default function ServicesGrid() {
       <header className="pgrid__head">
         <span className="pgrid__eyebrow">Services</span>
         <h1 className="pgrid__title" id="services-title">
-          Notion systems and executive support.
+          Notion systems, executive support and automation repair.
         </h1>
         <p className="pgrid__lede">
           For small businesses that have outgrown spreadsheets and sticky notes, and for founders who need their inbox and calendar owned.
@@ -177,11 +187,11 @@ export default function ServicesGrid() {
           </ol>
         </div>
 
-        {/* Five cards, each carrying the marks of what it is built with. */}
+        {/* Six cards, each carrying the marks of what it is built with. */}
         <div className="sgrid__offers">
           <div className="sgrid__offers-head">
             <h2 className="sgrid__offers-title">What I can take off your plate.</h2>
-            <p className="sgrid__offers-sub">Nine live examples are on the Projects page.</p>
+            <p className="sgrid__offers-sub">Ten live examples are on the Projects page.</p>
           </div>
           <ul className="bento sgrid__services" role="list">
             {SERVICES.map((s) => (
@@ -189,7 +199,7 @@ export default function ServicesGrid() {
                 <span className="bento__head">
                   <span className="sgrid__service-top">
                     <Marks logos={s.logos} />
-                    <span className="sgrid__service-index" aria-hidden="true">{s.index} / 05</span>
+                    <span className="sgrid__service-index" aria-hidden="true">{s.index} / 06</span>
                   </span>
                   <span className="bento__title">{s.title}</span>
                   <span className="bento__desc">{s.description}</span>

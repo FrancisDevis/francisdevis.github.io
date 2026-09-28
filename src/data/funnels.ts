@@ -1,4 +1,4 @@
-export type FunnelTag = 'Lead Capture' | 'Booking' | 'Checkout' | 'Website' | 'Notion system'
+export type FunnelTag = 'Lead Capture' | 'Booking' | 'Checkout' | 'Website' | 'Notion system' | 'Automation'
 
 export type Funnel = {
   file: string
@@ -31,4 +31,5 @@ export const tagColors: Record<FunnelTag, string> = {
   Checkout: '#f59e0b',
   Website: '#FF7A1A',
   'Notion system': '#2869AA',
+  Automation: '#624CCC',
 }

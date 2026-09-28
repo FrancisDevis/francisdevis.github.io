@@ -73,7 +73,7 @@ export default function HomeBento() {
     <nav className="bento" aria-label="Explore the portfolio">
       {/* Projects: the nine live systems drift upward as title tiles. */}
       <Link to="/projects" className="bento__card bento__card--projects">
-        <CardHead Icon={FolderOpen} title="Projects" desc="Nine live Notion systems. Each one opens on the problem it catches." />
+        <CardHead Icon={FolderOpen} title="Projects" desc="Nine live Notion systems and one tested automation. Each opens on the problem it catches." />
         <div className="bento__media bento__reel" aria-hidden="true">
           <div className="bento__reel-track">
             {shots.map((sys, i) => (
@@ -140,7 +140,7 @@ export default function HomeBento() {
 
       {/* Services: the five offers as a compact index. */}
       <Link to="/services" className="bento__card bento__card--services">
-        <CardHead Icon={Stack} title="Services" desc="Notion systems and executive support for small businesses." />
+        <CardHead Icon={Stack} title="Services" desc="Notion systems, executive support and automation repair." />
         <ul className="bento__media bento__offers" role="list">
           {OFFERS.map(({ Icon, title, note }, i) => (
             <li key={title} className="bento__offer" style={{ '--i': i } as React.CSSProperties}>

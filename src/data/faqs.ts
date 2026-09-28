@@ -13,7 +13,7 @@ export const FAQS: QA[] = [
   },
   {
     q: 'Can I see your work first?',
-    a: 'Yes. Nine systems are live on the Projects page and open without a login. They run on invented businesses and invented data, so click anything you like.',
+    a: 'Yes. Nine Notion systems and one tested automation are live on the Projects page and open without a login. They run on invented businesses and invented data, so click anything you like.',
   },
   {
     q: 'How do you price?',

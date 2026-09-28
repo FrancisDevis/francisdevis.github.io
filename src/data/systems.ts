@@ -1,6 +1,6 @@
 /**
- * The nine live Notion systems. This is the Projects page and the Home
- * "Projects" card.
+ * The live samples: nine Notion systems and one tested automation. This is
+ * the Projects page and the Home "Projects" card.
  *
  * Rules for this file:
  * - `title` is the page's LIVE title on notion.site. Never an internal name.
@@ -21,6 +21,10 @@ export type NotionSystem = {
   tint: string
   /** Screenshot of the live page (light theme), in public/systems/. Captured 26 Sept 2026. */
   image?: string
+  /** Carousel tag. Defaults to 'Notion system'. */
+  tag?: 'Notion system' | 'Automation'
+  /** Card link text. Defaults to 'Open the live system'. */
+  cta?: string
 }
 
 const SITE = 'https://enormous-woolen-5f8.notion.site/'
@@ -34,6 +38,17 @@ export const systems: NotionSystem[] = [
     catches: 'Flags every qualified lead nobody has contacted in a week, with the deal value at risk.',
     url: SITE + '3dd9a4e52ba3800eb584fbc483e58c89',
     tint: '#2869AA',
+  },
+  {
+    id: '12',
+    image: '/systems/12.jpg',
+    kind: 'Lead capture automation',
+    title: 'The form worked. It was quietly creating duplicate leads.',
+    catches: 'Stops a lead who submits twice from becoming two leads, and drafts every reply for a person to send.',
+    url: SITE + '3e99a4e52ba38193a811dff0cd2b4759',
+    tint: '#624CCC',
+    tag: 'Automation',
+    cta: 'Open the case study',
   },
   {
     id: '10',
@@ -110,7 +125,8 @@ export const systems: NotionSystem[] = [
 ]
 
 /** Real problems these builds were designed around. Each one is written up,
- *  with its guard, in the sample's How We Work page. */
+ *  with its guard, in the sample's How We Work page (the automation's is in
+ *  its case study). */
 export const breakPoints: string[] = [
   'A relation that only runs one way',
   'A rollup quietly reading 0',
@@ -120,4 +136,5 @@ export const breakPoints: string[] = [
   'A step linking to a page in the Trash',
   'Money summed as an average',
   'Two column names swapped',
+  'One lead saved twice',
 ]
