@@ -65,6 +65,19 @@ export default function ProjectsGrid() {
   const phone = useIsPhone()
   const dlg = useRef<HTMLDialogElement>(null)
   const [open, setOpen] = useState<EaWork | null>(null)
+  const box = useRef<HTMLDivElement>(null)
+  /** Scroll the box to a section. Buttons, not #links: the page's smooth-scroll
+   *  hijacks #links and tries to scroll the page, which does not move. */
+  const jump = (id: string) => {
+    const el = document.getElementById(id)
+    const b = box.current
+    if (!el) return
+    if (b && b.scrollHeight > b.clientHeight) {
+      b.scrollTo({ top: b.scrollTop + el.getBoundingClientRect().top - b.getBoundingClientRect().top - 8, behavior: 'smooth' })
+    } else {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
   const show = (w: EaWork) => {
     setOpen(w)
     dlg.current?.showModal()
@@ -82,11 +95,12 @@ export default function ProjectsGrid() {
         </p>
       </header>
 
-      <div className="home__glass pgrid__glass pgrid__glass--scroll">
+      {/* data-lenis-prevent: this box scrolls by itself; without it the page's smooth-scroll swallows the wheel. */}
+      <div className="home__glass pgrid__glass pgrid__glass--scroll" ref={box} data-lenis-prevent>
         <nav className="lanejump" aria-label="Jump to a section">
-          <a href="#lane-ea">Executive support</a>
-          <a href="#lane-notion">Notion systems</a>
-          <a href="#lane-auto">Automation</a>
+          <button type="button" onClick={() => jump('lane-ea')}>Executive support</button>
+          <button type="button" onClick={() => jump('lane-notion')}>Notion systems</button>
+          <button type="button" onClick={() => jump('lane-auto')}>Automation</button>
         </nav>
 
         <h2 className="lane__title" id="lane-ea">Executive support</h2>
