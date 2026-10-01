@@ -30,6 +30,15 @@ export const eaWork: EaWork[] = [
       'Nothing deleted. Every message filed into five numbered labels, so the list sorts itself into the order to act on it: urgent, follow up, waiting, completed, read later.',
   },
   {
+    id: '11',
+    image: '/ea/11.jpg',
+    thumb: '/ea/thumb-11.jpg',
+    kind: 'Tool research',
+    title: 'Six tools compared on normal versus charity pricing',
+    caption:
+      'Before anything was bought: what each tool costs, the nonprofit discount, how to apply for it, and which ones were urgent. Organisation name redacted.',
+  },
+  {
     id: '06',
     image: '/ea/06.jpg',
     thumb: '/ea/thumb-06.jpg',
@@ -80,6 +89,15 @@ export const eaWork: EaWork[] = [
     title: 'Eleven layers, not eleven colours',
     caption:
       'Each category is its own calendar, so one click shows the week as work only or life only without deleting anything. Private categories redacted.',
+  },
+  {
+    id: '12',
+    image: '/ea/12.jpg',
+    thumb: '/ea/thumb-12.jpg',
+    kind: 'Email campaign',
+    title: "The organisation's first email campaign, sent and measured",
+    caption:
+      '193 recipients, 97.9% delivered and 28.6% opened, with the report read back after five days. Campaign name and audience redacted.',
   },
   {
     id: '10',
