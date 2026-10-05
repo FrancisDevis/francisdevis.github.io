@@ -4,7 +4,8 @@
  *
  * Rules for this file:
  * - `title` is the page's LIVE title on notion.site. Never an internal name.
- * - `url` is always the public enormous-woolen-5f8.notion.site link,
+ * - `url` is the public enormous-woolen-5f8.notion.site link, or a path on
+ *   this site starting with / (the lead catcher case study, 5 Oct),
  *   never an app.notion.com link and never with ?source=copy_link.
  * - `catches` says what the system flags. No day counts: those change every
  *   day on the live page and would stop matching what a visitor sees.
@@ -45,10 +46,11 @@ export const systems: NotionSystem[] = [
     kind: 'Lead capture automation',
     title: 'The form worked. It was quietly creating duplicate leads.',
     catches: 'Stops a lead who submits twice from becoming two leads, and drafts every reply for a person to send.',
-    url: SITE + '3e99a4e52ba38193a811dff0cd2b4759',
+    // On-site case study page (5 Oct). The Notion version is linked from it.
+    url: '/projects/lead-catcher',
     tint: '#624CCC',
     tag: 'Automation',
-    cta: 'Open the case study',
+    cta: 'Read the case study',
   },
   {
     id: '10',

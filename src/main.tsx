@@ -13,6 +13,7 @@ const ServicesView = lazy(() => import('@/views/ServicesView'))
 const TestimonialsGrid = lazy(() => import('@/components/TestimonialsGrid'))
 const AboutGrid = lazy(() => import('@/components/AboutGrid'))
 const ContactGrid = lazy(() => import('@/components/ContactGrid'))
+const LeadCatcherCase = lazy(() => import('@/components/LeadCatcherCase'))
 import './styles/tokens.css'
 import './styles/global.css'
 import './styles/theme-glyph.css'
@@ -41,6 +42,7 @@ import './styles/apple.css'
 // Mobile motion + component pass on top of it (phone shell only).
 import './styles/mobile-pass.css'
 import './styles/francis.css'
+import './styles/case-study.css'
 // Last: the perf tiers only ever turn things OFF, so they must win.
 import './styles/perf.css'
 
@@ -61,6 +63,7 @@ createRoot(container).render(
         <Route element={<App />}>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<ProjectsView />} />
+          <Route path="/projects/lead-catcher" element={<LeadCatcherCase />} />
           <Route path="/services" element={<ServicesView />} />
           <Route path="/testimonials" element={<TestimonialsGrid />} />
           <Route path="/about" element={<AboutGrid />} />

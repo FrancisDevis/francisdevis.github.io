@@ -1,0 +1,221 @@
+/* ============================================
+   CASE STUDY PAGE (the lead catcher, 5 Oct 2026)
+   Stats strip, facts sidebar, numbered sections. Site tokens only, so it
+   follows light and dark. The scroll box reuses .pgrid__glass--scroll.
+   ============================================ */
+.cs__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  align-self: flex-start;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  text-decoration: none;
+}
+.cs__back:hover { color: var(--navy); }
+
+.cs__box { display: block !important; padding: clamp(14px, 1.6vw, 22px); }
+
+.cs__stats {
+  list-style: none;
+  margin: 0 0 18px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+.cs__stats li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 18px;
+  border-radius: 18px;
+  background: var(--white);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+.cs__stat-v { font-size: clamp(24px, 2.2vw, 34px); font-weight: 700; letter-spacing: -0.02em; color: var(--navy); line-height: 1.05; }
+.cs__stat-l { font-size: 12.5px; line-height: 1.4; color: var(--muted); }
+
+.cs__body {
+  display: grid;
+  grid-template-columns: minmax(220px, 260px) minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.cs__side {
+  /* Not sticky: on a 900px-tall laptop the sidebar is taller than the box. */
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 18px;
+  border-radius: 18px;
+  background: var(--white);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+.cs__facts { margin: 0; display: flex; flex-direction: column; gap: 12px; }
+.cs__facts dt { font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.cs__facts dd { margin: 3px 0 0; font-size: 13.5px; font-weight: 600; color: var(--navy); line-height: 1.35; }
+.cs__chips { display: flex; flex-wrap: wrap; gap: 5px; }
+.cs__chips span {
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: var(--paper);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+.cs__toc { display: flex; flex-direction: column; border-top: 1px solid var(--divider); padding-top: 10px; }
+.cs__toc button {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  padding: 6px 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 13px;
+  color: var(--navy);
+  text-align: left;
+  cursor: pointer;
+}
+.cs__toc button span { font-size: 11px; font-weight: 700; color: var(--orange); font-variant-numeric: tabular-nums; }
+.cs__toc button:hover { color: var(--orange); }
+.cs__notion {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.cs__main {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+.cs__sec {
+  position: relative;
+  padding: 22px 24px 24px 64px;
+  border-radius: 18px;
+  background: var(--white);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+.cs__n {
+  position: absolute;
+  left: 24px;
+  top: 26px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--orange);
+  font-variant-numeric: tabular-nums;
+}
+.cs__sec h2 { margin: 0 0 8px; font-size: clamp(19px, 1.6vw, 24px); letter-spacing: -0.015em; color: var(--navy); }
+.cs__sec p { margin: 0 0 10px; font-size: 14.5px; line-height: 1.6; color: var(--navy); max-width: 68ch; }
+.cs__list { margin: 4px 0 0; padding-left: 18px; display: flex; flex-direction: column; gap: 8px; font-size: 14.5px; line-height: 1.55; color: var(--navy); max-width: 68ch; }
+.cs__list li::marker { color: var(--orange); }
+
+.cs__flow {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+.cs__flow li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px;
+  border-radius: 14px;
+  background: var(--paper);
+  box-shadow: inset 0 0 0 1px var(--line);
+  font-size: 12.5px;
+  color: var(--muted);
+}
+.cs__flow strong { font-size: 14px; color: var(--navy); }
+.cs__flow li:last-child { box-shadow: inset 0 0 0 1.5px var(--success); }
+.cs__flow-n {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  margin-bottom: 4px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--cream);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.cs__breaks { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-direction: column; gap: 16px; }
+.cs__breaks > li { padding-top: 14px; border-top: 1px solid var(--divider); }
+.cs__breaks > li:first-child { border-top: 0; padding-top: 0; }
+.cs__break-t { display: flex; gap: 10px; font-weight: 600; }
+.cs__break-t span {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--error) 14%, var(--white));
+  color: var(--error);
+  font-size: 11px;
+  font-weight: 700;
+}
+.cs__break-g { padding-left: 32px; color: var(--muted) !important; }
+.cs__break-g strong { color: var(--success); }
+
+.cs__fig { margin: 12px 0 0; }
+.cs__fig img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 1px var(--line), 0 10px 26px -18px rgba(11, 30, 63, 0.45);
+  background: #fff;
+}
+.cs__fig figcaption { margin-top: 8px; font-size: 12.5px; color: var(--muted); }
+.cs__fig--narrow { max-width: 460px; }
+
+.cs__cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 20px 24px;
+  border-radius: 18px;
+  background: var(--navy);
+  color: var(--cream);
+}
+.cs__cta p { margin: 0; font-size: 15px; font-weight: 600; }
+.cs__book {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: var(--orange);
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+@media (max-width: 1099px) {
+  .cs__stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cs__body { grid-template-columns: minmax(0, 1fr); }
+  .cs__side { position: static; }
+  .cs__toc { display: none; }
+  .cs__flow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cs__sec { padding: 20px 18px 20px 18px; }
+  .cs__n { position: static; display: block; margin-bottom: 4px; }
+  .cs__break-g { padding-left: 0; }
+}

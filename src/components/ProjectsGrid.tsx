@@ -1,5 +1,6 @@
 import { lazy, Suspense, useRef, useState } from 'react'
-import { ArrowUpRight } from '@/components/slab'
+import { Link } from 'react-router-dom'
+import { ArrowUpRight, ArrowRight } from '@/components/slab'
 import { systems, type NotionSystem } from '@/data/systems'
 import { eaWork, type EaWork } from '@/data/eaWork'
 import type { Funnel } from '@/data/funnels'
@@ -13,7 +14,10 @@ const BARREL: Funnel[] = systems
   .map((s) => ({ file: `${s.id}.html`, label: s.title, tag: s.tag ?? 'Notion system', desc: s.catches, thumb: s.image, href: s.url }))
 
 const openLive = (f: Funnel) => {
-  if (f.href) window.open(f.href, '_blank', 'noopener,noreferrer')
+  if (!f.href) return
+  // A path on this site (the case study) opens in place; Notion opens in a new tab.
+  if (f.href.startsWith('/')) window.location.assign(f.href)
+  else window.open(f.href, '_blank', 'noopener,noreferrer')
 }
 
 /**
@@ -24,28 +28,38 @@ const openLive = (f: Funnel) => {
  * To change a card, edit src/data/systems.ts. Nothing here needs touching.
  */
 function SystemCard({ s }: { s: NotionSystem }) {
+  const inner = (
+    <>
+      {s.image && (
+        <span className="syscard__shot">
+          <img src={s.image} alt="" loading="lazy" decoding="async" />
+        </span>
+      )}
+      <span className="syscard__kind">{s.kind}</span>
+      <span className="syscard__title">{s.title}</span>
+      <span className="syscard__catches">{s.catches}</span>
+      <span className="syscard__go">
+        {s.cta ?? 'Open the live system'}
+        {s.url.startsWith('/') ? (
+          <ArrowRight size={13} weight="bold" aria-hidden="true" />
+        ) : (
+          <ArrowUpRight size={13} weight="bold" aria-hidden="true" />
+        )}
+      </span>
+    </>
+  )
+  const style = { ['--tint' as string]: s.tint }
   return (
     <li>
-      <a
-        className="syscard"
-        href={s.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{ ['--tint' as string]: s.tint }}
-      >
-        {s.image && (
-          <span className="syscard__shot">
-            <img src={s.image} alt="" loading="lazy" decoding="async" />
-          </span>
-        )}
-        <span className="syscard__kind">{s.kind}</span>
-        <span className="syscard__title">{s.title}</span>
-        <span className="syscard__catches">{s.catches}</span>
-        <span className="syscard__go">
-          {s.cta ?? 'Open the live system'}
-          <ArrowUpRight size={13} weight="bold" aria-hidden="true" />
-        </span>
-      </a>
+      {s.url.startsWith('/') ? (
+        <Link className="syscard" to={s.url} style={style}>
+          {inner}
+        </Link>
+      ) : (
+        <a className="syscard" href={s.url} target="_blank" rel="noopener noreferrer" style={style}>
+          {inner}
+        </a>
+      )}
     </li>
   )
 }
