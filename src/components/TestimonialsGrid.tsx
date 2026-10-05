@@ -5,8 +5,9 @@ import type { Icon } from '@/components/slab'
 /**
  * TestimonialsGrid - the Testimonials view as a fixed viewport.
  *
- * Left: the two LinkedIn recommendations, word for word, one at a time with
- * a picker. Right: where the work came from.
+ * Left: three testimonials, word for word, one at a time with a picker: the
+ * two LinkedIn recommendations, then Alon Pearl's written testimonial (sent by
+ * email 28 Sept; permission for the website, his name and title, 5 Oct). Right: where the work came from.
  *
  * Rules for this page (from the evidence log):
  * - Quote word for word. Kallista: sentences 2 and 3 only (sentence 1 carries
@@ -20,6 +21,8 @@ type Quote = {
   text: string
   name: string
   role: string
+  /** Where the quote lives. Only LinkedIn ones get the "See it on LinkedIn" link. */
+  source: 'linkedin' | 'written'
 }
 
 const LINKEDIN_RECS = 'https://www.linkedin.com/in/francisrowenndevis'
@@ -31,6 +34,7 @@ const QUOTES: Quote[] = [
     text: "He's been reliable, efficient, and easy to work with, and has taken the time to understand what I needed and turn it into practical, well-organised systems. I'd happily recommend him to anyone looking for a skilled and dependable VA, particularly for Notion and systems organisation.",
     name: 'Kallista Cox',
     role: 'Business Manager, SheBuild Consulting',
+    source: 'linkedin',
   },
   {
     id: 'oli',
@@ -38,6 +42,16 @@ const QUOTES: Quote[] = [
     text: "Francis was a pleasure to work with during his time with us. He was proficient across his tasks, consistently productive, and reliable in delivering quality work on time. We'd happily recommend him to any team looking for a diligent VA team member.",
     name: 'Oli Williams',
     role: 'SheBuild Consulting | Founder & CEO of Reportable Pty Ltd',
+    source: 'linkedin',
+  },
+  {
+    id: 'alon',
+    index: '03',
+    // Verbatim, hyphens as he wrote them.
+    text: "Francis consistently delivers outstanding value to the clients he supports. His technical ability - especially in designing clean, scalable Notion systems - paired with his proactive approach and reliability make him a tremendous asset to any team. I strongly recommend him to anyone looking for high-caliber operational and executive support.",
+    name: 'Alon Pearl',
+    role: 'Co-Founder & CEO, VA Masters (the agency that placed me)',
+    source: 'written',
   },
 ]
 
@@ -92,7 +106,7 @@ export default function TestimonialsGrid() {
           What the people I worked with say.
         </h1>
         <p className="pgrid__lede">
-          Two recommendations from the consultancy team I built Notion workspaces for. Both are public on my LinkedIn.
+          Two public LinkedIn recommendations from the consultancy team I built Notion workspaces for, and one from the CEO of the agency that placed me there.
         </p>
       </header>
 
@@ -106,14 +120,18 @@ export default function TestimonialsGrid() {
                 <span className="tquote__name">{q.name}</span>
                 <span className="tquote__role">{q.role}</span>
               </figcaption>
-              <a className="tquote__link" href={LINKEDIN_RECS} target="_blank" rel="noopener noreferrer">
-                See it on LinkedIn
-                <ArrowUpRight size={13} weight="bold" aria-hidden="true" />
-              </a>
+              {q.source === 'linkedin' ? (
+                <a className="tquote__link" href={LINKEDIN_RECS} target="_blank" rel="noopener noreferrer">
+                  See it on LinkedIn
+                  <ArrowUpRight size={13} weight="bold" aria-hidden="true" />
+                </a>
+              ) : (
+                <span className="tquote__link tquote__link--static">Written testimonial, shared with permission</span>
+              )}
             </figure>
           </div>
 
-          <div className="tgrid__picker" role="group" aria-label="Choose a recommendation">
+          <div className="tgrid__picker" role="group" aria-label="Choose a testimonial">
             {QUOTES.map((c, i) => (
               <button
                 key={c.id}
@@ -124,7 +142,7 @@ export default function TestimonialsGrid() {
               >
                 <span className="tgrid__pick-copy">
                   <span className="tgrid__pick-kicker">{c.name}</span>
-                  <span className="tgrid__pick-meta">LinkedIn recommendation</span>
+                  <span className="tgrid__pick-meta">{c.source === 'linkedin' ? 'LinkedIn' : 'Written'}</span>
                 </span>
               </button>
             ))}

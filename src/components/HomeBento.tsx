@@ -37,6 +37,7 @@ const OFFERS = [
 const CLIENTS = [
   { name: 'Kallista Cox', role: 'Business Manager, SheBuild Consulting', work: '"...particularly for Notion and systems organisation"' },
   { name: 'Oli Williams', role: 'SheBuild Consulting | Founder & CEO of Reportable Pty Ltd', work: '"...reliable in delivering quality work on time"' },
+  { name: 'Alon Pearl', role: 'Co-Founder & CEO, VA Masters', work: '"...designing clean, scalable Notion systems"' },
 ]
 
 const PHOTOS = [profile.hero.portraitSrc, profile.avatarSrc, profile.hero.portraitSrc + '?b']
@@ -159,9 +160,9 @@ export default function HomeBento() {
         </ul>
       </Link>
 
-      {/* Testimonials: the two recommendations drifting up a clipped column. */}
+      {/* Testimonials: the three testimonials drifting up a clipped column. */}
       <Link to="/testimonials" className="bento__card bento__card--quotes">
-        <CardHead Icon={Quotes} title="Testimonials" desc="Two public LinkedIn recommendations from the team I built Notion workspaces for." />
+        <CardHead Icon={Quotes} title="Testimonials" desc="Three testimonials: two public LinkedIn recommendations and one from the CEO of the agency that placed me." />
         <div className="bento__media bento__reviews" aria-hidden="true">
           <div className="bento__reviews-track">
             {[...CLIENTS, ...CLIENTS, ...CLIENTS, ...CLIENTS].map((c, i) => (

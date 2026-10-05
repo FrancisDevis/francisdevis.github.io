@@ -154,7 +154,7 @@
    the active cell lit and underlined in the accent. */
 .tgrid__picker {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   flex: 0 0 auto;
   border-radius: 14px;
   background: var(--paper);
@@ -402,3 +402,6 @@
   .tgrid__client-role { font-size: 11.5px; }
   .tgrid__client-tag { font-size: 12px; }
 }
+
+/* A testimonial with no public page: same look as the link, not clickable. */
+.tquote__link--static { pointer-events: none; text-decoration: none; opacity: 0.8; }

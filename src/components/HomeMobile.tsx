@@ -49,7 +49,7 @@ export function HomeStats() {
 const TILES = [
   { n: '01', label: 'Projects', to: '/projects', title: 'Nine Notion systems, one automation', desc: 'Each one opens on the problem it catches.', img: '/systems/03.jpg' },
   { n: '02', label: 'Services', to: '/services', title: 'Notion systems, executive support, automation', desc: 'Audit first, then build, then hand over.', Icon: Stack },
-  { n: '03', label: 'Testimonials', to: '/testimonials', title: 'Two LinkedIn recommendations', desc: 'Word for word, from the team I built for.', Icon: Quotes, accent: true },
+  { n: '03', label: 'Testimonials', to: '/testimonials', title: 'Three testimonials', desc: 'Word for word. Two are public on LinkedIn.', Icon: Quotes, accent: true },
   { n: '04', label: 'About', to: '/about', title: `Hi, I'm ${profile.firstName}.`, desc: 'I build Notion systems, then run them like an Executive VA.', img: profile.hero.portraitSrc },
 ] as const
 
