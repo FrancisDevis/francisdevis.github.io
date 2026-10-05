@@ -27,16 +27,15 @@ export const eaWork: EaWork[] = [
     kind: 'Inbox management',
     title: '6,081 conversations to inbox zero',
     caption:
-      'Nothing deleted. Every message filed into five numbered labels, so the list sorts itself into the order to act on it: urgent, follow up, waiting, completed, read later.',
+      'Nothing deleted. 4,879 filed into five labels that sort in the order to act: urgent, follow up, waiting, completed, read later.',
   },
   {
-    id: '11',
-    image: '/ea/11.jpg',
-    thumb: '/ea/thumb-11.jpg',
-    kind: 'Tool research',
-    title: 'Six tools compared on normal versus charity pricing',
-    caption:
-      'Before anything was bought: what each tool costs, the nonprofit discount, how to apply for it, and which ones were urgent. Organisation name redacted.',
+    id: '12',
+    image: '/ea/12.jpg',
+    thumb: '/ea/thumb-12.jpg',
+    kind: 'Email campaign',
+    title: 'First email campaign: 193 sent, 97.9% delivered, 28.6% opened',
+    caption: 'Built, sent, and the report read back after five days. Campaign name and audience redacted.',
   },
   {
     id: '06',
@@ -45,16 +44,24 @@ export const eaWork: EaWork[] = [
     kind: 'Calendar management',
     title: 'Every commitment on one calendar, in layers',
     caption:
-      'Rest blocked overnight, a buffer before and a recap after every meeting, and protected time nothing lands on. The left side is an illustration of a typical week; the right is the live calendar with names redacted.',
+      'Rest blocked overnight, a buffer before and a recap after every meeting. Left: an illustration of a typical week. Right: the live calendar, redacted.',
+  },
+  {
+    id: '11',
+    image: '/ea/11.jpg',
+    thumb: '/ea/thumb-11.jpg',
+    kind: 'Tool research',
+    title: 'Six tools priced before anything was bought',
+    caption:
+      "Normal versus nonprofit pricing, how to apply, and what was urgent. 1Password's 25% discount confirmed with their support.",
   },
   {
     id: '02',
     image: '/ea/02.jpg',
     thumb: '/ea/thumb-02.jpg',
     kind: 'Task management',
-    title: 'One flat import, split into a board per owner',
-    caption:
-      'A CSV import where every deadline said ASAP became linked boards filtered by owner. Same database underneath, so nothing has to be updated twice.',
+    title: 'One CSV import, a board per owner',
+    caption: 'Each person opens one filtered board on the same database, so nothing is updated twice.',
   },
   {
     id: '03',
@@ -62,8 +69,7 @@ export const eaWork: EaWork[] = [
     thumb: '/ea/thumb-03.jpg',
     kind: 'Filing',
     title: 'Thirteen folders, one place to look',
-    caption:
-      'Named for what someone would go looking for, not what created them, so every new file has one obvious home and the filing survives the person who set it up.',
+    caption: 'Named for what someone goes looking for, so a new hire finds any file without asking.',
   },
   {
     id: '04',
@@ -74,38 +80,12 @@ export const eaWork: EaWork[] = [
     caption: 'The same three parts every time: what closed, what I corrected, and what is still open.',
   },
   {
-    id: '05',
-    image: '/ea/05.jpg',
-    thumb: '/ea/thumb-05.jpg',
-    kind: 'Daily driver',
-    title: 'A Today view that answers one question',
-    caption: 'Priority sorted, due today, not yet done. Three filters on one database, so the list is already the day.',
-  },
-  {
-    id: '09',
-    image: '/ea/09.jpg',
-    thumb: '/ea/thumb-09.jpg',
-    kind: 'Calendar management',
-    title: 'Eleven layers, not eleven colours',
-    caption:
-      'Each category is its own calendar, so one click shows the week as work only or life only without deleting anything. Private categories redacted.',
-  },
-  {
-    id: '12',
-    image: '/ea/12.jpg',
-    thumb: '/ea/thumb-12.jpg',
-    kind: 'Email campaign',
-    title: "The organisation's first email campaign, sent and measured",
-    caption:
-      '193 recipients, 97.9% delivered and 28.6% opened, with the report read back after five days. Campaign name and audience redacted.',
-  },
-  {
     id: '10',
     image: '/ea/10.jpg',
     thumb: '/ea/thumb-10.jpg',
     kind: 'Hiring support',
-    title: 'Sourced, screened and shortlisted a hire',
+    title: 'Hiring support, job post to shortlist',
     caption:
-      'Job post written, candidates researched, interview questions prepared for each one, and a shortlist with a recommendation. Candidate names redacted.',
+      'Job post written, candidates researched, interview questions for each one, and a shortlist with my recommendation. Candidate names redacted.',
   },
 ]
