@@ -30,7 +30,7 @@ const FACTS = [
   { k: 'Timeline', v: 'Built and tested 6 Oct 2026' },
 ]
 const SERVICES = ['Expense tracking', 'Statement reconciliation', 'Failure documentation']
-const TOOLS = ['Google Sheets', 'Apps Script']
+const TOOLS = ['Google Sheets']
 
 const SECTIONS = [
   { id: 'cs-does', n: '01', t: 'What this system does' },
