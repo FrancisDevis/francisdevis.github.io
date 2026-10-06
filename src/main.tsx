@@ -14,6 +14,7 @@ const TestimonialsGrid = lazy(() => import('@/components/TestimonialsGrid'))
 const AboutGrid = lazy(() => import('@/components/AboutGrid'))
 const ContactGrid = lazy(() => import('@/components/ContactGrid'))
 const LeadCatcherCase = lazy(() => import('@/components/LeadCatcherCase'))
+const ExpenseTrackerCase = lazy(() => import('@/components/ExpenseTrackerCase'))
 import './styles/tokens.css'
 import './styles/global.css'
 import './styles/theme-glyph.css'
@@ -64,6 +65,7 @@ createRoot(container).render(
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<ProjectsView />} />
           <Route path="/projects/lead-catcher" element={<LeadCatcherCase />} />
+          <Route path="/projects/expense-tracker" element={<ExpenseTrackerCase />} />
           <Route path="/services" element={<ServicesView />} />
           <Route path="/testimonials" element={<TestimonialsGrid />} />
           <Route path="/about" element={<AboutGrid />} />

@@ -10,8 +10,10 @@
  */
 export type EaWork = {
   id: string
-  /** Image in public/ea/, burned-in headline included. */
-  image: string
+  /** Image in public/ea/, burned-in headline included. Not used when url is set. */
+  image?: string
+  /** A page on this site (starts with /). Set: the card opens that page instead of the popup. */
+  url?: string
   kind: string
   title: string
   caption: string
@@ -87,5 +89,15 @@ export const eaWork: EaWork[] = [
     title: 'Hiring support, job post to shortlist',
     caption:
       'Job post written, candidates researched, interview questions for each one, and a shortlist with my recommendation. Candidate names redacted.',
+  },
+  {
+    // SAMPLE BUILD, not client work (6 Oct 2026). Copy is his, word for word.
+    id: 'expense-tracker',
+    url: '/projects/expense-tracker',
+    thumb: '/case/expense-tracker/thumb.jpg',
+    kind: 'Sample build',
+    title: 'Multi-company expense tracker (sample build)',
+    caption:
+      'A founder with three businesses logs every receipt in one Google Sheet, and each month is checked against the bank statement. In testing it caught a $412.30 receipt logged twice, a $54.99 charge filed under the wrong company, and a receipt with no file.',
   },
 ]

@@ -120,22 +120,38 @@ export default function ProjectsGrid() {
         <h2 className="lane__title" id="lane-ea">Executive support</h2>
         <p className="sysnote">
           Real client work for a Sydney nonprofit CEO running four ventures, June to July 2026. Names and private
-          details are redacted.
+          details are redacted. The last card is a sample build, marked as one.
         </p>
         <ul className="sysgrid" role="list">
-          {eaWork.map((w) => (
-            <li key={w.id}>
-              <button type="button" className="syscard eacard" onClick={() => show(w)}>
+          {eaWork.map((w) => {
+            const inner = (
+              <>
                 <span className="syscard__shot eacard__shot">
                   <img src={w.thumb} alt="" loading="lazy" decoding="async" />
                 </span>
                 <span className="syscard__kind">{w.kind}</span>
                 <span className="syscard__title">{w.title}</span>
                 <span className="syscard__catches">{w.caption}</span>
-                <span className="syscard__go">View the full image</span>
-              </button>
-            </li>
-          ))}
+                <span className="syscard__go">
+                  {w.url ? 'Read the case study' : 'View the full image'}
+                  {w.url && <ArrowRight size={13} weight="bold" aria-hidden="true" />}
+                </span>
+              </>
+            )
+            return (
+              <li key={w.id}>
+                {w.url ? (
+                  <Link className="syscard eacard" to={w.url}>
+                    {inner}
+                  </Link>
+                ) : (
+                  <button type="button" className="syscard eacard" onClick={() => show(w)}>
+                    {inner}
+                  </button>
+                )}
+              </li>
+            )
+          })}
         </ul>
 
         <h2 className="lane__title" id="lane-notion">Notion systems</h2>
@@ -168,7 +184,7 @@ export default function ProjectsGrid() {
       <dialog ref={dlg} className="eadlg" onClose={() => setOpen(null)} onClick={(e) => e.target === dlg.current && dlg.current?.close()}>
         {open && (
           <figure className="eadlg__fig">
-            <img src={open.image} alt={open.title} />
+            <img src={open.image ?? open.thumb} alt={open.title} />
             <figcaption>
               <strong>{open.title}</strong>
               <span>{open.caption}</span>
