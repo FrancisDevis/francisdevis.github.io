@@ -120,7 +120,7 @@ export default function ProjectsGrid() {
         <h2 className="lane__title" id="lane-ea">Executive support</h2>
         <p className="sysnote">
           Real client work for a Sydney nonprofit CEO running four ventures, June to July 2026. Names and private
-          details are redacted. The last card is a sample build, marked as one.
+          details are redacted. The last two cards are sample builds, marked as such.
         </p>
         <ul className="sysgrid" role="list">
           {eaWork.map((w) => {
@@ -129,7 +129,10 @@ export default function ProjectsGrid() {
                 <span className="syscard__shot eacard__shot">
                   <img src={w.thumb} alt="" loading="lazy" decoding="async" />
                 </span>
-                <span className="syscard__kind">{w.kind}</span>
+                <span className="syscard__kind">
+                  {w.kind}
+                  {w.tools && ` · ${w.tools}`}
+                </span>
                 <span className="syscard__title">{w.title}</span>
                 <span className="syscard__catches">{w.caption}</span>
                 <span className="syscard__go">

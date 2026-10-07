@@ -14,6 +14,8 @@ export type EaWork = {
   image?: string
   /** A page on this site (starts with /). Set: the card opens that page instead of the popup. */
   url?: string
+  /** Tool chip for a sample build, shown after the kind label ("Sample build · Google Sheets"). */
+  tools?: string
   kind: string
   title: string
   caption: string
@@ -55,7 +57,7 @@ export const eaWork: EaWork[] = [
     kind: 'Tool research',
     title: 'Six tools priced before anything was bought',
     caption:
-      "Normal versus nonprofit pricing, how to apply, and what was urgent. 1Password's 25% discount confirmed with their support.",
+      "Normal versus nonprofit pricing, how to apply, and what was urgent. 1Password's 25% discount confirmed with their support. The full register version is the sample build further down this section.",
   },
   {
     id: '02',
@@ -96,8 +98,20 @@ export const eaWork: EaWork[] = [
     url: '/projects/expense-tracker',
     thumb: '/case/expense-tracker/thumb.jpg',
     kind: 'Sample build',
+    tools: 'Google Sheets',
     title: 'Multi-company expense tracker (sample build)',
     caption:
       'A founder with three businesses logs every receipt in one Google Sheet, and each month is checked against the bank statement. In testing it caught a $412.30 receipt logged twice, a $54.99 charge filed under the wrong company, and a receipt with no file.',
+  },
+  {
+    // SAMPLE BUILD, not client work (7 Oct 2026). Copy is his, word for word.
+    id: 'tool-register',
+    url: '/projects/tool-register',
+    thumb: '/case/tool-register/thumb.jpg',
+    kind: 'Sample build',
+    tools: 'Google Sheets',
+    title: 'Every subscription on one sheet, every renewal decided',
+    caption:
+      'Grew out of the tool research I did for a real client. A software register for a three-company founder. It caught a tool paid twice, two apps doing one job and six unused seats: $220.62 a month saved.',
   },
 ]
