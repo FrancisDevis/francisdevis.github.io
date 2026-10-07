@@ -62,15 +62,6 @@ export const eaWork: EaWork[] = [
     caption: 'Built, sent, and the report read back after five days. Campaign name and audience redacted.',
   },
   {
-    id: '11',
-    image: '/ea/11.jpg',
-    thumb: '/ea/thumb-11.jpg',
-    kind: 'Tool research',
-    title: 'Six tools priced before anything was bought',
-    caption:
-      "Normal versus nonprofit pricing, how to apply, and what was urgent. 1Password's 25% discount confirmed with their support. The full register version is the next card.",
-  },
-  {
     // SAMPLE BUILD, not client work (7 Oct 2026). Copy is his, word for word.
     id: 'tool-register',
     url: '/projects/tool-register',
