@@ -62,15 +62,15 @@ export const eaWork: EaWork[] = [
     caption: 'Built, sent, and the report read back after five days. Campaign name and audience redacted.',
   },
   {
-    // REAL client work, REDRAWN 7 Oct 2026 from his original sheet: same six tools,
-    // same prices and discounts, nothing added. The image says so. Old image: 11.jpg.
+    // REAL client work. Image rebuilt 7 Oct 2026 as a summary of his original sheet:
+    // same six tools, prices and discounts, nothing added. Original screenshot: 11.jpg.
     id: '11',
     image: '/ea/11b.jpg',
     thumb: '/ea/thumb-11b.jpg',
     kind: 'Tool research',
     title: 'Six tools priced before anything was bought',
     caption:
-      "Normal versus nonprofit pricing, how to apply, and what was urgent. 1Password's 25% discount confirmed with their support. Redrawn from my original sheet, same data. The full register version is the next card.",
+      "Normal versus nonprofit pricing, how to apply, and what was urgent. 1Password's 25% discount confirmed with their support. The full register version is the next card.",
   },
   {
     // SAMPLE BUILD, not client work (7 Oct 2026). Copy is his, word for word.
