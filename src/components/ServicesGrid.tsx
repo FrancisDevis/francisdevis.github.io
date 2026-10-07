@@ -149,7 +149,9 @@ export default function ServicesGrid() {
         </p>
       </header>
 
-      <div className="home__glass sgrid__glass">
+      {/* data-lenis-prevent + pgrid__glass--scroll: on a laptop the six services run past the
+          bottom of the screen; the box scrolls by itself, same as Projects (S11). */}
+      <div className="home__glass sgrid__glass pgrid__glass--scroll" data-lenis-prevent>
         {/* One dark plate, the headline on the left, the three stages wired
             in order on the right with a signal running them. */}
         <div className="sgrid__method" aria-labelledby="method-title">
