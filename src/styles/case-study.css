@@ -235,3 +235,9 @@
 .eadlg--zoom .eadlg__scroll { overflow-x: auto; border-radius: 10px; }
 .eadlg--zoom .eadlg__scroll img { min-width: 900px; }
 @media (min-width: 1000px) { .eadlg--zoom .eadlg__scroll img { min-width: 0; } }
+
+/* Retreat planner (7 Oct 2026): five stat tiles, a caption under a before/after pair, the known limit. */
+.cs__stats--5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.cs__pair-cap { margin: 8px 0 0; font-size: 12.5px; color: var(--muted); }
+.cs__limit { margin: 16px 0 0; padding: 12px 14px; border-radius: 12px; background: var(--cream, #faf7f2); font-size: 14px; line-height: 1.55; }
+@media (max-width: 1099px) { .cs__stats--5 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

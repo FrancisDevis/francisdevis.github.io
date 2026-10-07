@@ -129,4 +129,15 @@ export const eaWork: EaWork[] = [
     caption:
       'A founder with three businesses logs every receipt in one Google Sheet, and each month is checked against the bank statement. In testing it caught a $412.30 receipt logged twice, a $54.99 charge filed under the wrong company, and a receipt with no file.',
   },
+  {
+    // SAMPLE BUILD, not client work (7 Oct 2026). Title and line are his, word for word.
+    id: 'retreat-planner',
+    url: '/projects/retreat-planner',
+    thumb: '/case/retreat-planner/thumb.jpg',
+    kind: 'Sample build',
+    tools: 'Google Sheets',
+    title: 'Retreat Itinerary & Run of Show',
+    caption:
+      'A 4-day leadership retreat for 8 guests flying in from 4 cities: flights, pickups, rooms, dietary needs, an hour-by-hour run of show and a vendor budget, with a check that found 6 problems a week out and closed them to 0.',
+  },
 ]

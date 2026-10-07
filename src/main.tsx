@@ -17,6 +17,7 @@ const LeadCatcherCase = lazy(() => import('@/components/LeadCatcherCase'))
 const ExpenseTrackerCase = lazy(() => import('@/components/ExpenseTrackerCase'))
 const ToolRegisterCase = lazy(() => import('@/components/ToolRegisterCase'))
 const ExecutiveCalendarCase = lazy(() => import('@/components/ExecutiveCalendarCase'))
+const RetreatPlannerCase = lazy(() => import('@/components/RetreatPlannerCase'))
 import './styles/tokens.css'
 import './styles/global.css'
 import './styles/theme-glyph.css'
@@ -70,6 +71,7 @@ createRoot(container).render(
           <Route path="/projects/expense-tracker" element={<ExpenseTrackerCase />} />
           <Route path="/projects/tool-register" element={<ToolRegisterCase />} />
           <Route path="/projects/executive-calendar" element={<ExecutiveCalendarCase />} />
+          <Route path="/projects/retreat-planner" element={<RetreatPlannerCase />} />
           <Route path="/services" element={<ServicesView />} />
           <Route path="/testimonials" element={<TestimonialsGrid />} />
           <Route path="/about" element={<AboutGrid />} />
