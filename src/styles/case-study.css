@@ -219,3 +219,19 @@
   .cs__n { position: static; display: block; margin-bottom: 4px; }
   .cs__break-g { padding-left: 0; }
 }
+
+/* Tap-to-open figures (ZoomFigure.tsx, 7 Oct 2026) and before/after pairs. */
+.cs__zoom { position: relative; display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; font: inherit; text-align: left; }
+.cs__zoom-hint {
+  position: absolute; right: 10px; bottom: 10px;
+  padding: 4px 10px; border-radius: 999px;
+  background: rgba(11, 30, 63, 0.78); color: #fff;
+  font-size: 11.5px; font-weight: 600;
+}
+.cs__pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.cs__pair .cs__fig { margin-top: 12px; }
+@media (max-width: 700px) { .cs__pair { grid-template-columns: minmax(0, 1fr); } }
+.eadlg--zoom { overflow: auto; }
+.eadlg--zoom .eadlg__scroll { overflow-x: auto; border-radius: 10px; }
+.eadlg--zoom .eadlg__scroll img { min-width: 900px; }
+@media (min-width: 1000px) { .eadlg--zoom .eadlg__scroll img { min-width: 0; } }

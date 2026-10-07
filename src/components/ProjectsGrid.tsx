@@ -120,7 +120,7 @@ export default function ProjectsGrid() {
         <h2 className="lane__title" id="lane-ea">Executive support</h2>
         <p className="sysnote">
           Real client work for a Sydney nonprofit CEO running four ventures, June to July 2026. Names and private
-          details are redacted. The last two cards are sample builds, marked as such.
+          details are redacted. The last three cards are sample builds, marked as such.
         </p>
         <ul className="sysgrid" role="list">
           {eaWork.map((w) => {

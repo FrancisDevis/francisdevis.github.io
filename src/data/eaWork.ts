@@ -93,6 +93,17 @@ export const eaWork: EaWork[] = [
       'Job post written, candidates researched, interview questions for each one, and a shortlist with my recommendation. Candidate names redacted.',
   },
   {
+    // SAMPLE BUILD, not client work (7 Oct 2026). Copy is his, word for word.
+    id: 'executive-calendar',
+    url: '/projects/executive-calendar',
+    thumb: '/case/executive-calendar/thumb.jpg',
+    kind: 'Sample build',
+    tools: 'Google Calendar · Google Sheets · Apps Script',
+    title: "A founder's week that checks itself",
+    caption:
+      'A colour-coded Google Calendar for a three-company founder, plus a check that reads the live calendar against six rules. Test week: 7 broken rules found and fixed to 0.',
+  },
+  {
     // SAMPLE BUILD, not client work (6 Oct 2026). Copy is his, word for word.
     id: 'expense-tracker',
     url: '/projects/expense-tracker',
