@@ -26,12 +26,14 @@ export type EaWork = {
 export const eaWork: EaWork[] = [
   {
     id: '01',
-    image: '/ea/01.jpg',
-    thumb: '/ea/thumb-01.jpg',
+    // Image rebuilt 7 Oct 2026 from his real screenshot (6,081 in All Mail, the five labels).
+    // Original screenshot: 01.jpg.
+    image: '/ea/01b.jpg',
+    thumb: '/ea/thumb-01b.jpg',
     kind: 'Inbox management',
     title: '6,081 conversations to inbox zero',
     caption:
-      'Nothing deleted. 4,879 filed into five labels that sort in the order to act: urgent, follow up, waiting, completed, read later.',
+      'Nothing deleted. 4,879 filed into five labels that sort in the order to act: urgent, follow up, waiting, completed, read later. The inbox was then monitored every day.',
   },
   {
     id: '06',
