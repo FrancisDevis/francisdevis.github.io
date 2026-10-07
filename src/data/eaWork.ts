@@ -34,6 +34,26 @@ export const eaWork: EaWork[] = [
       'Nothing deleted. 4,879 filed into five labels that sort in the order to act: urgent, follow up, waiting, completed, read later.',
   },
   {
+    id: '06',
+    image: '/ea/06.jpg',
+    thumb: '/ea/thumb-06.jpg',
+    kind: 'Calendar management',
+    title: 'Every commitment on one calendar, in layers',
+    caption:
+      'Rest blocked overnight, a buffer before and a recap after every meeting. Left: an illustration of a typical week. Right: the live calendar, redacted. The full system version is the next card.',
+  },
+  {
+    // SAMPLE BUILD, not client work (7 Oct 2026). Copy is his, word for word.
+    id: 'executive-calendar',
+    url: '/projects/executive-calendar',
+    thumb: '/case/executive-calendar/thumb.jpg',
+    kind: 'Sample build',
+    tools: 'Google Calendar · Google Sheets · Apps Script',
+    title: "A founder's week that checks itself",
+    caption:
+      'Grew out of the calendar I ran for a real client. A colour-coded Google Calendar for a three-company founder, plus a check that reads the live calendar against six rules. Test week: 7 broken rules found and fixed to 0.',
+  },
+  {
     id: '12',
     image: '/ea/12.jpg',
     thumb: '/ea/thumb-12.jpg',
@@ -42,22 +62,24 @@ export const eaWork: EaWork[] = [
     caption: 'Built, sent, and the report read back after five days. Campaign name and audience redacted.',
   },
   {
-    id: '06',
-    image: '/ea/06.jpg',
-    thumb: '/ea/thumb-06.jpg',
-    kind: 'Calendar management',
-    title: 'Every commitment on one calendar, in layers',
-    caption:
-      'Rest blocked overnight, a buffer before and a recap after every meeting. Left: an illustration of a typical week. Right: the live calendar, redacted.',
-  },
-  {
     id: '11',
     image: '/ea/11.jpg',
     thumb: '/ea/thumb-11.jpg',
     kind: 'Tool research',
     title: 'Six tools priced before anything was bought',
     caption:
-      "Normal versus nonprofit pricing, how to apply, and what was urgent. 1Password's 25% discount confirmed with their support. The full register version is the sample build further down this section.",
+      "Normal versus nonprofit pricing, how to apply, and what was urgent. 1Password's 25% discount confirmed with their support. The full register version is the next card.",
+  },
+  {
+    // SAMPLE BUILD, not client work (7 Oct 2026). Copy is his, word for word.
+    id: 'tool-register',
+    url: '/projects/tool-register',
+    thumb: '/case/tool-register/thumb.jpg',
+    kind: 'Sample build',
+    tools: 'Google Sheets',
+    title: 'Every subscription on one sheet, every renewal decided',
+    caption:
+      'Grew out of the tool research I did for a real client. A software register for a three-company founder. It caught a tool paid twice, two apps doing one job and six unused seats: $220.62 a month saved.',
   },
   {
     id: '02',
@@ -93,17 +115,6 @@ export const eaWork: EaWork[] = [
       'Job post written, candidates researched, interview questions for each one, and a shortlist with my recommendation. Candidate names redacted.',
   },
   {
-    // SAMPLE BUILD, not client work (7 Oct 2026). Copy is his, word for word.
-    id: 'executive-calendar',
-    url: '/projects/executive-calendar',
-    thumb: '/case/executive-calendar/thumb.jpg',
-    kind: 'Sample build',
-    tools: 'Google Calendar · Google Sheets · Apps Script',
-    title: "A founder's week that checks itself",
-    caption:
-      'A colour-coded Google Calendar for a three-company founder, plus a check that reads the live calendar against six rules. Test week: 7 broken rules found and fixed to 0.',
-  },
-  {
     // SAMPLE BUILD, not client work (6 Oct 2026). Copy is his, word for word.
     id: 'expense-tracker',
     url: '/projects/expense-tracker',
@@ -113,16 +124,5 @@ export const eaWork: EaWork[] = [
     title: 'Multi-company expense tracker (sample build)',
     caption:
       'A founder with three businesses logs every receipt in one Google Sheet, and each month is checked against the bank statement. In testing it caught a $412.30 receipt logged twice, a $54.99 charge filed under the wrong company, and a receipt with no file.',
-  },
-  {
-    // SAMPLE BUILD, not client work (7 Oct 2026). Copy is his, word for word.
-    id: 'tool-register',
-    url: '/projects/tool-register',
-    thumb: '/case/tool-register/thumb.jpg',
-    kind: 'Sample build',
-    tools: 'Google Sheets',
-    title: 'Every subscription on one sheet, every renewal decided',
-    caption:
-      'Grew out of the tool research I did for a real client. A software register for a three-company founder. It caught a tool paid twice, two apps doing one job and six unused seats: $220.62 a month saved.',
   },
 ]
