@@ -70,8 +70,8 @@ export const eaWork: EaWork[] = [
   {
     id: '04',
     // 8 Oct 2026: the founder's request for a waiting-on-her list first, then the June folder
-    // (unblurred; organisation and founder name boxed). Earlier versions kept: 04.jpg, 04b.jpg.
-    image: '/ea/04c.jpg',
+    // (unblurred; organisation and founder name boxed). Earlier versions kept: 04.jpg, 04b.jpg, 04c.jpg (caption said "Still open"; changed 8 Oct to match the previews).
+    image: '/ea/04d.jpg',
     thumb: '/ea/thumb-04b.jpg',
     kind: 'Daily reporting',
     title: 'End of day, every day, filed by month',
