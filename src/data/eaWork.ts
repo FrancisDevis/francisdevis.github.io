@@ -36,6 +36,16 @@ export const eaWork: EaWork[] = [
       'While recovering files from an old mailbox, I found an internal request that was written but never sent. It may be why a project payment had been stuck since May. I also flagged a missing vendor quote and mapped duplicate folders without moving anything, so the founder could decide.',
   },
   {
+    // REAL client work, added 8 Oct 2026. Title and text are his, word for word.
+    id: '14',
+    image: '/ea/14.jpg',
+    thumb: '/ea/thumb-14.jpg',
+    kind: 'Invoice check',
+    title: 'Flagged an invoice that did not match the trip',
+    caption:
+      "Before merging a contractor's invoices, I noticed his daily rate covered 20 days while the trip budget assumed 26 to 32. I asked before merging so the total would be right.",
+  },
+  {
     id: '01',
     // 8 Oct 2026: real screenshots, THE MAILBOX (6,081 in All Mail, taken 23 Aug) and AFTER (inbox zero), redacted by him.
     // Earlier versions kept: 01.jpg (original), 01b.jpg (rebuilt 7 Oct).
@@ -59,8 +69,9 @@ export const eaWork: EaWork[] = [
   },
   {
     id: '04',
-    // 8 Oct 2026: the June folder, unblurred; organisation and founder name boxed. Old image kept: 04.jpg.
-    image: '/ea/04b.jpg',
+    // 8 Oct 2026: the founder's request for a waiting-on-her list first, then the June folder
+    // (unblurred; organisation and founder name boxed). Earlier versions kept: 04.jpg, 04b.jpg.
+    image: '/ea/04c.jpg',
     thumb: '/ea/thumb-04b.jpg',
     kind: 'Daily reporting',
     title: 'End of day, every day, filed by month',
