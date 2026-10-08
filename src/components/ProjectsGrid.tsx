@@ -64,6 +64,20 @@ function SystemCard({ s }: { s: NotionSystem }) {
   )
 }
 
+/** Executive support in two groups: real client work first, then the labelled sample builds. */
+const EA_GROUPS = [
+  {
+    heading: 'Delivered for a real client',
+    note: 'Sydney nonprofit founder, June to July 2026. Real screenshots, names and private details removed.',
+    list: eaWork.filter((w) => w.kind !== 'Sample build'),
+  },
+  {
+    heading: 'Sample builds you can open',
+    note: 'Fictional client, real working systems. Each one was tested with planted mistakes and fixed to zero.',
+    list: eaWork.filter((w) => w.kind === 'Sample build'),
+  },
+]
+
 const notion = systems.filter((s) => (s.tag ?? 'Notion system') === 'Notion system')
 const automation = systems.filter((s) => s.tag === 'Automation')
 
@@ -118,44 +132,46 @@ export default function ProjectsGrid() {
         </nav>
 
         <h2 className="lane__title" id="lane-ea">Executive support</h2>
-        <p className="sysnote">
-          Real client work for a Sydney nonprofit CEO running four ventures, June to July 2026. Names and private
-          details are redacted. Four cards are sample builds, each labelled, and two sit next to the real work they grew from.
-        </p>
-        <ul className="sysgrid" role="list">
-          {eaWork.map((w) => {
-            const inner = (
-              <>
-                <span className="syscard__shot eacard__shot">
-                  <img src={w.thumb} alt="" loading="lazy" decoding="async" />
-                </span>
-                <span className="syscard__kind">
-                  {w.kind}
-                  {w.tools && ` · ${w.tools}`}
-                </span>
-                <span className="syscard__title">{w.title}</span>
-                <span className="syscard__catches">{w.caption}</span>
-                <span className="syscard__go">
-                  {w.url ? 'Read the case study' : 'View the full image'}
-                  {w.url && <ArrowRight size={13} weight="bold" aria-hidden="true" />}
-                </span>
-              </>
-            )
-            return (
-              <li key={w.id}>
-                {w.url ? (
-                  <Link className="syscard eacard" to={w.url}>
-                    {inner}
-                  </Link>
-                ) : (
-                  <button type="button" className="syscard eacard" onClick={() => show(w)}>
-                    {inner}
-                  </button>
-                )}
-              </li>
-            )
-          })}
-        </ul>
+        {EA_GROUPS.map(({ heading, note, list }) => (
+          <div key={heading}>
+            <h3 className="lane__group">{heading}</h3>
+            <p className="sysnote">{note}</p>
+            <ul className="sysgrid" role="list">
+              {list.map((w) => {
+                const inner = (
+                  <>
+                    <span className="syscard__shot eacard__shot">
+                      <img src={w.thumb} alt="" loading="lazy" decoding="async" />
+                    </span>
+                    <span className="syscard__kind">
+                      {w.kind}
+                      {w.tools && ` · ${w.tools}`}
+                    </span>
+                    <span className="syscard__title">{w.title}</span>
+                    <span className="syscard__catches">{w.caption}</span>
+                    <span className="syscard__go">
+                      {w.url ? 'Read the case study' : 'View the full image'}
+                      {w.url && <ArrowRight size={13} weight="bold" aria-hidden="true" />}
+                    </span>
+                  </>
+                )
+                return (
+                  <li key={w.id}>
+                    {w.url ? (
+                      <Link className="syscard eacard" to={w.url}>
+                        {inner}
+                      </Link>
+                    ) : (
+                      <button type="button" className="syscard eacard" onClick={() => show(w)}>
+                        {inner}
+                      </button>
+                    )}
+                  </li>
+                )
+              })}
+            </ul>
+          </div>
+        ))}
 
         <h2 className="lane__title" id="lane-notion">Notion systems</h2>
         {!phone && BARREL.length > 0 && (

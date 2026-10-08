@@ -254,6 +254,7 @@
   margin: 22px 0 6px; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--orange); scroll-margin-top: 12px;
 }
+.lane__group { margin: 18px 0 4px; font-size: 15px; font-weight: 700; }
 .eacard { --tint: #F97316; font: inherit; text-align: left; cursor: pointer; width: 100%; }
 .eacard__shot { background: #fff; }
 .eacard__shot img { object-fit: cover; object-position: top left; }

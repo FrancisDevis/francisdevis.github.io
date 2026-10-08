@@ -6,7 +6,8 @@
  *   calendar categories, candidates. Check a new image for names and for
  *   Francis's own rate before adding it.
  * - Never quote the client and never name her or the organisation.
- * - The calendar "before" is an illustration he drew; its caption says so.
+ * - Two groups, in this order: real client work first, then sample builds
+ *   (kind 'Sample build'). ProjectsGrid splits them by kind.
  */
 export type EaWork = {
   id: string
@@ -25,11 +26,21 @@ export type EaWork = {
 
 export const eaWork: EaWork[] = [
   {
+    // REAL client work, added 8 Oct 2026. Text his; title and second sentence softened 8 Oct to match his report ("may be the reason").
+    id: '13',
+    image: '/ea/13.jpg',
+    thumb: '/ea/thumb-13.jpg',
+    kind: 'Inbox recovery',
+    title: 'Found what may have stalled a payment since May',
+    caption:
+      'While recovering files from an old mailbox, I found an internal request that was written but never sent. It may be why a project payment had been stuck since May. I also flagged a missing vendor quote and mapped duplicate folders without moving anything, so the founder could decide.',
+  },
+  {
     id: '01',
-    // Image rebuilt 7 Oct 2026 from his real screenshot (6,081 in All Mail, the five labels).
-    // Original screenshot: 01.jpg.
-    image: '/ea/01b.jpg',
-    thumb: '/ea/thumb-01b.jpg',
+    // 8 Oct 2026: real screenshots, THE MAILBOX (6,081 in All Mail, taken 23 Aug) and AFTER (inbox zero), redacted by him.
+    // Earlier versions kept: 01.jpg (original), 01b.jpg (rebuilt 7 Oct).
+    image: '/ea/01c.jpg',
+    thumb: '/ea/thumb-01c.jpg',
     kind: 'Inbox management',
     title: '6,081 conversations to inbox zero',
     caption:
@@ -37,12 +48,69 @@ export const eaWork: EaWork[] = [
   },
   {
     id: '06',
-    image: '/ea/06.jpg',
-    thumb: '/ea/thumb-06.jpg',
+    // 8 Oct 2026: left the founder’s written brief, right the live calendar. Legend and headline
+    // carried over from 06.jpg unchanged (layer count being confirmed). Old image kept: 06.jpg.
+    image: '/ea/06b.jpg',
+    thumb: '/ea/thumb-06b.jpg',
     kind: 'Calendar management',
     title: 'Every commitment on one calendar, in layers',
     caption:
-      'Rest blocked overnight, a buffer before and a recap after every meeting. Left: an illustration of a typical week. Right: the live calendar, redacted. The full system version is the next card.',
+      'Rest blocked overnight, buffers and recaps around meetings. Left: the founder’s written brief. Right: the calendar I built from it, private titles removed. The full system version is in the sample builds below.',
+  },
+  {
+    id: '04',
+    // 8 Oct 2026: the June folder, unblurred; organisation and founder name boxed. Old image kept: 04.jpg.
+    image: '/ea/04b.jpg',
+    thumb: '/ea/thumb-04b.jpg',
+    kind: 'Daily reporting',
+    title: 'End of day, every day, filed by month',
+    caption: 'The same three parts every time: what closed, what I corrected, and what is still open.',
+  },
+  {
+    id: '03',
+    // 8 Oct 2026: the 13 folders, then inside SOPs & Processes. Old image kept: 03.jpg.
+    image: '/ea/03b.jpg',
+    thumb: '/ea/thumb-03b.jpg',
+    kind: 'Filing',
+    title: 'Thirteen folders, one place to look',
+    caption: 'Named for what someone goes looking for, so a new hire finds any file without asking.',
+  },
+  {
+    id: '10',
+    // 8 Oct 2026: previews unblurred, candidate names, organisation and founder name boxed. Old image kept: 10.jpg.
+    image: '/ea/10b.jpg',
+    thumb: '/ea/thumb-10b.jpg',
+    kind: 'Hiring support',
+    title: 'Hiring support, job post to shortlist',
+    caption:
+      'Job post written, candidates researched, interview questions for each one, and a shortlist with my recommendation. Candidate names redacted.',
+  },
+  {
+    // REAL client work. Image rebuilt 7 Oct 2026 as a summary of his original sheet:
+    // same six tools, prices and discounts, nothing added. Original screenshot: 11.jpg.
+    id: '11',
+    image: '/ea/11b.jpg',
+    thumb: '/ea/thumb-11b.jpg',
+    kind: 'Tool research',
+    title: 'Six tools priced before anything was bought',
+    caption:
+      "Normal versus nonprofit pricing, how to apply, and what was urgent. 1Password's 25% discount confirmed with their support. The full register version is in the sample builds below.",
+  },
+  {
+    id: '02',
+    image: '/ea/02.jpg',
+    thumb: '/ea/thumb-02.jpg',
+    kind: 'Task management',
+    title: 'One CSV import, a board per owner',
+    caption: 'Each person opens one filtered board on the same database, so nothing is updated twice.',
+  },
+  {
+    id: '12',
+    image: '/ea/12.jpg',
+    thumb: '/ea/thumb-12.jpg',
+    kind: 'Email campaign',
+    title: 'First email campaign: 193 sent, 97.9% delivered, 28.6% opened',
+    caption: 'Built, sent, and the report read back after five days. Campaign name and audience redacted.',
   },
   {
     // SAMPLE BUILD, not client work (7 Oct 2026). Copy is his, word for word.
@@ -56,25 +124,6 @@ export const eaWork: EaWork[] = [
       'Grew out of the calendar I ran for a real client. A colour-coded Google Calendar for a three-company founder, plus a check that reads the live calendar against six rules. Test week: 7 broken rules found and fixed to 0.',
   },
   {
-    id: '12',
-    image: '/ea/12.jpg',
-    thumb: '/ea/thumb-12.jpg',
-    kind: 'Email campaign',
-    title: 'First email campaign: 193 sent, 97.9% delivered, 28.6% opened',
-    caption: 'Built, sent, and the report read back after five days. Campaign name and audience redacted.',
-  },
-  {
-    // REAL client work. Image rebuilt 7 Oct 2026 as a summary of his original sheet:
-    // same six tools, prices and discounts, nothing added. Original screenshot: 11.jpg.
-    id: '11',
-    image: '/ea/11b.jpg',
-    thumb: '/ea/thumb-11b.jpg',
-    kind: 'Tool research',
-    title: 'Six tools priced before anything was bought',
-    caption:
-      "Normal versus nonprofit pricing, how to apply, and what was urgent. 1Password's 25% discount confirmed with their support. The full register version is the next card.",
-  },
-  {
     // SAMPLE BUILD, not client work (7 Oct 2026). Copy is his, word for word.
     id: 'tool-register',
     url: '/projects/tool-register',
@@ -84,39 +133,6 @@ export const eaWork: EaWork[] = [
     title: 'Every subscription on one sheet, every renewal decided',
     caption:
       'Grew out of the tool research I did for a real client. A software register for a three-company founder. It caught a tool paid twice, two apps doing one job and six unused seats: $220.62 a month saved.',
-  },
-  {
-    id: '02',
-    image: '/ea/02.jpg',
-    thumb: '/ea/thumb-02.jpg',
-    kind: 'Task management',
-    title: 'One CSV import, a board per owner',
-    caption: 'Each person opens one filtered board on the same database, so nothing is updated twice.',
-  },
-  {
-    id: '03',
-    image: '/ea/03.jpg',
-    thumb: '/ea/thumb-03.jpg',
-    kind: 'Filing',
-    title: 'Thirteen folders, one place to look',
-    caption: 'Named for what someone goes looking for, so a new hire finds any file without asking.',
-  },
-  {
-    id: '04',
-    image: '/ea/04.jpg',
-    thumb: '/ea/thumb-04.jpg',
-    kind: 'Daily reporting',
-    title: 'End of day, every day, filed by month',
-    caption: 'The same three parts every time: what closed, what I corrected, and what is still open.',
-  },
-  {
-    id: '10',
-    image: '/ea/10.jpg',
-    thumb: '/ea/thumb-10.jpg',
-    kind: 'Hiring support',
-    title: 'Hiring support, job post to shortlist',
-    caption:
-      'Job post written, candidates researched, interview questions for each one, and a shortlist with my recommendation. Candidate names redacted.',
   },
   {
     // SAMPLE BUILD, not client work (6 Oct 2026). Copy is his, word for word.
