@@ -59,8 +59,10 @@ export const eaWork: EaWork[] = [
   {
     id: '06',
     // 8 Oct 2026: left the founder’s written brief, right the live calendar. Legend and headline
-    // carried over from 06.jpg. 8 Oct (EA chat ruling): "six layers" became "11 calendars, grouped into 6 colours". Headline "Every commitment in one view, no gaps." (EA chat, 8 Oct). Old images kept: 06.jpg, 06b.jpg, 06c.jpg.
-    image: '/ea/06d.jpg',
+    // carried over from 06.jpg. 8 Oct (EA chat rulings): headline "Every commitment in one view, no gaps.";
+    // line "Rebuilt as separate calendars, colour-grouped by type." (11 and 6 are not in EVA_Evidence_Log);
+    // note under the key: indigo and tan are the CEO's own colours. Old images kept: 06.jpg, 06b.jpg, 06c.jpg, 06d.jpg.
+    image: '/ea/06e.jpg',
     thumb: '/ea/thumb-06b.jpg',
     kind: 'Calendar management',
     title: 'Every commitment on one calendar, in layers',
