@@ -193,7 +193,7 @@ export default function ServicesGrid() {
         <div className="sgrid__offers">
           <div className="sgrid__offers-head">
             <h2 className="sgrid__offers-title">What I can take off your plate.</h2>
-            <p className="sgrid__offers-sub">Ten live examples are on the Projects page.</p>
+            <p className="sgrid__offers-sub">Nine real client jobs and fourteen sample builds are on the Projects page.</p>
           </div>
           <ul className="bento sgrid__services" role="list">
             {SERVICES.map((s) => (

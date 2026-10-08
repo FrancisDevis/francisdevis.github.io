@@ -74,7 +74,7 @@ export default function HomeBento() {
     <nav className="bento" aria-label="Explore the portfolio">
       {/* Projects: the nine live systems drift upward as title tiles. */}
       <Link to="/projects" className="bento__card bento__card--projects">
-        <CardHead Icon={FolderOpen} title="Projects" desc="Nine live Notion systems and one tested automation. Each opens on the problem it catches." />
+        <CardHead Icon={FolderOpen} title="Projects" desc="Real client work, four executive support samples, nine Notion systems, one automation." />
         <div className="bento__media bento__reel" aria-hidden="true">
           <div className="bento__reel-track">
             {shots.map((sys, i) => (
