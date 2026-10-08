@@ -201,7 +201,8 @@ export default function ProjectsGrid() {
         </ul>
       </div>
 
-      <dialog ref={dlg} className="eadlg" onClose={() => setOpen(null)} onClick={(e) => e.target === dlg.current && dlg.current?.close()}>
+      {/* data-lenis-prevent: without it the smooth scroll swallows the wheel and a tall image cannot be scrolled (S11). */}
+      <dialog ref={dlg} className="eadlg" data-lenis-prevent onClose={() => setOpen(null)} onClick={(e) => e.target === dlg.current && dlg.current?.close()}>
         {open && (
           <figure className="eadlg__fig">
             <img src={open.image ?? open.thumb} alt={open.title} />
