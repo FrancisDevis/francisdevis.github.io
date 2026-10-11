@@ -169,4 +169,15 @@ export const eaWork: EaWork[] = [
     caption:
       'A 4-day leadership retreat for 8 guests flying in from 4 cities: flights, pickups, rooms, dietary needs, an hour-by-hour run of show and a vendor budget, with a check that found 6 problems a week out and closed them to 0.',
   },
+  {
+    // SAMPLE BUILD, not client work (11 Oct 2026). Title and line from the EA chat's brief, word for word.
+    id: 'meeting-tracker',
+    url: '/projects/meeting-tracker',
+    thumb: '/case/meeting-tracker/thumb.jpg',
+    kind: 'Sample build',
+    tools: 'Google Sheets',
+    title: 'Meeting to Action Tracker',
+    caption:
+      'Every meeting commitment gets an owner, a due date and a definition of done. Every morning the sheet writes the chase list and the brief.',
+  },
 ]
