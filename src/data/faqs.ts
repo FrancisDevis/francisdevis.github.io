@@ -13,7 +13,7 @@ export const FAQS: QA[] = [
   },
   {
     q: 'Can I see your work first?',
-    a: 'Yes. The Projects page shows ten executive support jobs I did for a real client, with private details covered. Next to them are five executive support sample builds in Google Sheets and Google Calendar, nine Notion systems and one tested automation. The samples run on invented businesses and invented data, so click anything you like.',
+    a: 'Yes. The Projects page shows ten executive support jobs I did for a real client, with private details covered. Next to them are six executive support sample builds in Google Sheets and Google Calendar, nine Notion systems and one tested automation. The samples run on invented businesses and invented data, so click anything you like.',
   },
   {
     q: 'How do you price?',

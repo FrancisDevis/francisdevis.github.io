@@ -88,7 +88,7 @@ const CLIENTS: Client[] = [
     name: 'Portfolio builds',
     role: 'Notion and executive support samples · Sept to Oct 2026',
     daily:
-      'Nine Notion systems and five executive support samples, built from an empty page on invented data, each with a guide to run it and its break points written down.',
+      'Nine Notion systems and six executive support samples, built from an empty page on invented data, each with a guide to run it and its break points written down.',
     work: ['Notion', 'SOPs', 'Break points'],
     Icon: Stack,
   },

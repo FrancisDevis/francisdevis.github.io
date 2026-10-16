@@ -180,4 +180,14 @@ export const eaWork: EaWork[] = [
     caption:
       'Every meeting commitment gets an owner, a due date and a definition of done. Every morning the sheet writes the chase list and the brief.',
   },
+  {
+    // SAMPLE BUILD, not client work (16 Oct 2026). Title and line from the EA chat's brief (v2), word for word.
+    id: 'recruitment-tracker',
+    url: '/projects/recruitment-tracker',
+    thumb: '/case/recruitment-tracker/thumb.jpg',
+    kind: 'Sample build',
+    tools: 'Google Sheets',
+    title: 'Recruitment Tracker',
+    caption: 'Every candidate tracked from application to offer. 7 planted hiring mistakes caught, fixed to 0.',
+  },
 ]
