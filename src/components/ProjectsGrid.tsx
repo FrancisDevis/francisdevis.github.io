@@ -118,7 +118,7 @@ export default function ProjectsGrid() {
           Client work and live systems. Open any of them.
         </h1>
         <p className="pgrid__lede">
-          Ten pieces of executive support I delivered for a real client, six executive support sample builds (marked as
+          Ten pieces of executive support I delivered for a real client, seven executive support sample builds (marked as
           samples), nine Notion systems and one tested automation. Every system ships with a guide to run it and a written
           list of how it breaks.
         </p>

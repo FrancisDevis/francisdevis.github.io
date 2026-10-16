@@ -190,4 +190,16 @@ export const eaWork: EaWork[] = [
     title: 'Recruitment Tracker',
     caption: 'Every candidate tracked from application to offer. 7 planted hiring mistakes caught, fixed to 0.',
   },
+  {
+    // SAMPLE BUILD, not client work (17 Oct 2026). Title and line from the EA chat's brief, word for word.
+    // He has not worked in sales operations: never describe this as client work.
+    id: 'sales-tracker',
+    url: '/projects/sales-tracker',
+    thumb: '/case/sales-tracker/thumb.jpg',
+    kind: 'Sample build',
+    tools: 'Google Sheets',
+    title: 'Sales Pipeline & Commission Tracker',
+    caption:
+      'Every deal from booked meeting to won, with commission paid only after the client pays. 7 planted mistakes caught, fixed to 0.',
+  },
 ]
