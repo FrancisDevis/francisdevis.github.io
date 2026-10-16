@@ -7,7 +7,8 @@
  *   Francis's own rate before adding it.
  * - Never quote the client and never name her or the organisation.
  * - Two groups, in this order: real client work first, then sample builds
- *   (kind 'Sample build'). ProjectsGrid splits them by kind.
+ *   (kind starting 'Sample': 'Sample build', and 'Sample audit' for the website audit).
+ *   ProjectsGrid splits them by kind.
  */
 export type EaWork = {
   id: string
@@ -201,5 +202,17 @@ export const eaWork: EaWork[] = [
     title: 'Sales Pipeline & Commission Tracker',
     caption:
       'Every deal from booked meeting to won, with commission paid only after the client pays. 7 planted mistakes caught, fixed to 0.',
+  },
+  {
+    // SAMPLE AUDIT of a REAL business (17 Oct 2026). Title and line from the EA chat's brief, word for word.
+    // Fullers Bookshop did not ask for this audit and has not seen it: never say or imply they are a client.
+    id: 'qa-audit',
+    url: '/projects/qa-audit',
+    thumb: '/case/qa-audit/thumb.jpg',
+    kind: 'Sample audit',
+    tools: 'Google Sheets',
+    title: 'Website QA Audit',
+    caption:
+      "A read-only audit of a real independent bookshop's public website. Every finding has the page, proof, why it matters to a customer, and a fix.",
   },
 ]

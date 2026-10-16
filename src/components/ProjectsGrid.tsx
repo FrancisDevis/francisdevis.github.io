@@ -69,12 +69,12 @@ const EA_GROUPS = [
   {
     heading: 'Delivered for a real client',
     note: 'Sydney nonprofit founder, June to July 2026. Real screenshots, names and private details removed.',
-    list: eaWork.filter((w) => w.kind !== 'Sample build'),
+    list: eaWork.filter((w) => !w.kind.startsWith('Sample')),
   },
   {
     heading: 'Sample builds you can open',
-    note: 'Fictional client, real working systems. Each one was tested with planted mistakes and fixed to zero.',
-    list: eaWork.filter((w) => w.kind === 'Sample build'),
+    note: "Fictional clients, real working systems, each tested with planted mistakes and fixed to zero. The website audit is the exception: a real business's public site, read only, and the business did not ask for it.",
+    list: eaWork.filter((w) => w.kind.startsWith('Sample')),
   },
 ]
 
@@ -118,7 +118,7 @@ export default function ProjectsGrid() {
           Client work and live systems. Open any of them.
         </h1>
         <p className="pgrid__lede">
-          Ten pieces of executive support I delivered for a real client, seven executive support sample builds (marked as
+          Ten pieces of executive support I delivered for a real client, eight executive support sample builds (marked as
           samples), nine Notion systems and one tested automation. Every system ships with a guide to run it and a written
           list of how it breaks.
         </p>
