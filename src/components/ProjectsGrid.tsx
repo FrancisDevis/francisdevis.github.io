@@ -68,7 +68,7 @@ function SystemCard({ s }: { s: NotionSystem }) {
 const EA_GROUPS = [
   {
     heading: 'Delivered for a real client',
-    note: 'Sydney nonprofit founder, June to July 2026. Real screenshots, names and private details removed.',
+    note: 'Sydney nonprofit founder, June to September 2026. Real screenshots, names and private details removed.',
     list: eaWork.filter((w) => !w.kind.startsWith('Sample')),
   },
   {

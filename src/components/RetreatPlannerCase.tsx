@@ -28,6 +28,7 @@ const STATS = [
 const FACTS = [
   { k: 'Client', v: 'Halden Ridge Holdings (fictional)' },
   { k: 'Type', v: 'Demonstration build, real runs' },
+  { k: 'Review date', v: 'Thu 5 Nov 2026 (frozen)' },
   { k: 'Year', v: '2026' },
   { k: 'Timeline', v: 'Built October 2026' },
 ]
@@ -164,7 +165,7 @@ export default function RetreatPlannerCase() {
               <div className="cs__pair">
                 <ZoomFigure
                   src={IMG + 'check-before.jpg'}
-                  alt="Retreat check on Thu 5 Nov 2026: 6 problems found, four traveller fixes, one unconfirmed vendor and the budget $670 over"
+                  alt="Retreat check on Thu 5 Nov 2026 (frozen): 6 problems found, four traveller fixes, one unconfirmed vendor and the budget $670 over"
                   caption="Before"
                 />
                 <ZoomFigure
