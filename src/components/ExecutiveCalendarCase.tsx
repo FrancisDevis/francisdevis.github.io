@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { ArrowLeft, ArrowUpRight, CalendarBlank } from '@/components/slab'
 import { BOOKING_URL } from '@/data/profile'
+import usePageTitle from '@/hooks/usePageTitle'
 import ZoomFigure from '@/components/ZoomFigure'
 
 /**
@@ -66,6 +67,7 @@ const BREAKS = [
 ]
 
 export default function ExecutiveCalendarCase() {
+  usePageTitle('Executive calendar (sample) · Francis Rowenn Devis')
   const jump = (id: string) => {
     const el = document.getElementById(id)
     const box = document.querySelector<HTMLElement>('.cs__box')

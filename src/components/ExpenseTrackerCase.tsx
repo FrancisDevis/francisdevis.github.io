@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { ArrowLeft, ArrowUpRight, CalendarBlank } from '@/components/slab'
 import { BOOKING_URL } from '@/data/profile'
+import usePageTitle from '@/hooks/usePageTitle'
 
 /**
  * The multi-company expense tracker case study (sample build, 6 Oct 2026).
@@ -75,6 +76,7 @@ const BREAKS = [
 ]
 
 export default function ExpenseTrackerCase() {
+  usePageTitle('Multi-company expense tracker (sample) · Francis Rowenn Devis')
   const jump = (id: string) => {
     const el = document.getElementById(id)
     const box = document.querySelector<HTMLElement>('.cs__box')

@@ -171,6 +171,18 @@ export const eaWork: EaWork[] = [
       'A 4-day leadership retreat for 8 guests flying in from 4 cities: flights, pickups, rooms, dietary needs, an hour-by-hour run of show and a vendor budget, with a check that found 6 problems a week out and closed them to 0.',
   },
   {
+    // SAMPLE BUILD, not client work (3 Nov 2026). Fictional client, real prices as seen on 3 Nov 2026; nothing booked.
+    // Title and line from the EA chat's brief, word for word.
+    id: 'travel-booking',
+    url: '/projects/travel-booking',
+    thumb: '/case/travel-booking/thumb.jpg',
+    kind: 'Sample build',
+    tools: 'Google Sheets',
+    title: 'Travel booking check',
+    caption:
+      "Real fares and rates checked against a CEO's travel rules before anything goes for approval. Test: 5 planted booking mistakes, fixed to 0.",
+  },
+  {
     // SAMPLE BUILD, not client work (11 Oct 2026). Title and line from the EA chat's brief, word for word.
     id: 'meeting-tracker',
     url: '/projects/meeting-tracker',
