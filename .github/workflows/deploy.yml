@@ -27,6 +27,11 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+        env:
+          # Contact form webhook. Kept out of the repo: set it in
+          # Settings > Secrets and variables > Actions > CONTACT_WEBHOOK_URL.
+          # Unset = the form falls back to opening the visitor's email app.
+          VITE_CONTACT_ENDPOINT: ${{ secrets.CONTACT_WEBHOOK_URL }}
       # Every page (/projects, /about...) is served by index.html.
       # GitHub Pages shows 404.html for unknown paths, so make it the app.
       - run: cp dist/index.html dist/404.html

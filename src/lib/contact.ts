@@ -9,8 +9,10 @@ import { profile } from '@/data/profile'
  * To wire a real backend (Formspree, a serverless function, a webhook...):
  *   1. Set VITE_CONTACT_ENDPOINT in .env.production to the URL that accepts
  *      a JSON POST of the Lead type below.
- *   2. Have it answer 2xx on success, or a non-2xx with { "error": "..." }
- *      and that sentence is shown to the visitor as-is.
+ *   2. Have it answer 2xx on success. Any other answer, or no answer, shows
+ *      the visitor the email fallback (ContactGrid).
+ * Live site: the address is NOT in this repo. The deploy workflow reads it
+ * from the GitHub Actions secret CONTACT_WEBHOOK_URL at build time.
  * With the variable unset the mail client path below is used instead.
  */
 
@@ -67,10 +69,9 @@ export async function submitLead(lead: Lead): Promise<SubmitResult> {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(lead),
     })
-    if (!res.ok) {
-      const body = await res.json().catch(() => null)
-      throw new SubmitError(body?.error || `The server answered ${res.status}.`)
-    }
+    // Only a 2xx counts as delivered. Anything else, or a network or CORS
+    // failure (fetch throws), shows the email fallback so no lead is lost.
+    if (!res.ok) throw new SubmitError(`status ${res.status}`)
     return { via: 'webhook' }
   }
 

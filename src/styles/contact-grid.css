@@ -313,6 +313,7 @@
   color: #B42318;
 }
 [data-theme='dark'] .cgrid__status { color: #FF8A80; }
+.cgrid__status a { color: inherit; text-decoration: underline; text-underline-offset: 2px; overflow-wrap: anywhere; }
 
 /* The sent state. Takes the whole panel so the sheet does not change shape.
    The panel rises in, the check pops with overshoot, the copy follows a beat

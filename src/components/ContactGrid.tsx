@@ -2,7 +2,7 @@ import { useState, type FormEvent } from 'react'
 import { PaperPlaneTilt, CheckCircle, WarningCircle, EnvelopeSimple, ArrowUpRight, CaretDown, CalendarBlank } from '@/components/slab'
 import { FAQS } from '@/data/faqs'
 import { profile, BOOKING_URL } from '@/data/profile'
-import { readLead, submitLead, SubmitError, MAX_NAME, MAX_EMAIL, MAX_MESSAGE, type SubmitResult } from '@/lib/contact'
+import { readLead, submitLead, ENDPOINT, MAX_NAME, MAX_EMAIL, MAX_MESSAGE, type SubmitResult } from '@/lib/contact'
 
 /**
  * ContactGrid - the Contact view as a fixed viewport.
@@ -12,12 +12,17 @@ import { readLead, submitLead, SubmitError, MAX_NAME, MAX_EMAIL, MAX_MESSAGE, ty
  * the form itself on the right. Sized to the panel, so
  * nothing here scrolls; the message box takes whatever height is left.
  *
- * Submission goes through lib/contact.ts, which is the one place a form
- * backend gets wired. Until it is, the same call opens the visitor's mail
- * client with the message laid out, and the success copy says so.
+ * Submission goes through lib/contact.ts. With VITE_CONTACT_ENDPOINT set at
+ * build time (the Make webhook, from a GitHub Actions secret) it POSTs JSON;
+ * without it the same call opens the visitor's mail client, and the hint and
+ * success copy follow whichever path is live.
  */
 
-type Status = { kind: 'idle' } | { kind: 'sending' } | { kind: 'error'; note: string } | { kind: 'sent'; via: SubmitResult['via'] }
+type Status =
+  | { kind: 'idle' }
+  | { kind: 'sending' }
+  | { kind: 'error'; note: string; fallback?: boolean }
+  | { kind: 'sent'; via: SubmitResult['via'] }
 
 /* The plane takes this long to leave the button. The sent state waits for it
    even when the submit itself is instant, so the send is something you see
@@ -46,9 +51,9 @@ export default function ContactGrid() {
     try {
       const [result] = await Promise.all([submitLead(lead), wait(FLIGHT_MS)])
       setStatus({ kind: 'sent', via: result.via })
-    } catch (err) {
-      const note = err instanceof SubmitError ? err.message : 'That did not go through. Email me directly instead.'
-      setStatus({ kind: 'error', note })
+    } catch {
+      // Network, CORS or a non-2xx answer: never a dead end. Show the address.
+      setStatus({ kind: 'error', note: 'That did not go through. Please email me at', fallback: true })
       setShake((n) => n + 1)
     }
   }
@@ -136,7 +141,7 @@ export default function ContactGrid() {
               </h2>
               <p className="cgrid__done-body">
                 {status.via === 'webhook'
-                  ? 'It is in my inbox. I will reply with a few questions about your setup.'
+                  ? 'Thank you. I have your message and will reply within one business day.'
                   : 'The message is laid out and addressed. Press send there and I will reply with a few questions about your setup.'}
               </p>
               <button type="button" className="cgrid__again" onClick={() => setStatus({ kind: 'idle' })}>
@@ -198,10 +203,22 @@ export default function ContactGrid() {
                 {status.kind === 'error' ? (
                   <span className="cgrid__status" role="alert">
                     <WarningCircle size={16} weight="fill" aria-hidden="true" />
-                    {status.note}
+                    <span>
+                      {status.note}
+                      {status.fallback ? (
+                        <>
+                          {' '}
+                          <a href={`mailto:${profile.email}`}>{profile.email}</a> and I will reply within one business day.
+                        </>
+                      ) : null}
+                    </span>
                   </span>
                 ) : (
-                  <span className="cgrid__hint">This opens your email app with the message ready to send.</span>
+                  <span className="cgrid__hint">
+                    {ENDPOINT
+                      ? 'Goes straight to me. I reply within one business day.'
+                      : 'This opens your email app with the message ready to send.'}
+                  </span>
                 )}
               </div>
             </form>
