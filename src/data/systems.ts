@@ -1,5 +1,5 @@
 /**
- * The live samples: nine Notion systems and one tested automation. This is
+ * The live samples: nine Notion systems and two tested automations. This is
  * the Projects page and the Home "Projects" card.
  *
  * Rules for this file:
@@ -39,6 +39,18 @@ export const systems: NotionSystem[] = [
     catches: 'Flags every qualified lead nobody has contacted in a week, with the deal value at risk.',
     url: SITE + '3dd9a4e52ba3800eb584fbc483e58c89',
     tint: '#2869AA',
+  },
+  {
+    id: '13',
+    image: '/systems/13.jpg',
+    kind: 'Lead capture automation, v2',
+    title: 'Make said Success. A lead was missing. The alert is how I knew.',
+    catches: 'Emails me the moment a step fails, with the lead inside, while Make still says Success.',
+    // On-site case study page and its runbook (11 Nov 2026). Live on this site's contact form.
+    url: '/projects/lead-catcher-v2',
+    tint: '#B23A5B',
+    tag: 'Automation',
+    cta: 'Read the case study',
   },
   {
     id: '12',

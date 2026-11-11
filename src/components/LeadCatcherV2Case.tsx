@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowLeft, EnvelopeSimple } from '@/components/slab'
 import ZoomFigure from '@/components/ZoomFigure'
@@ -12,8 +13,7 @@ import usePageTitle from '@/hooks/usePageTitle'
  * Change the text there first, then this file. Claude's own words: the stat labels,
  * the facts sidebar, the short labels under each image in a pair, and the alt text.
  *
- * NOT LINKED from Projects or Services until the Automation chat sends the public
- * "How to run this system" SOP (quality bar part 3). When it arrives, link "the runbook".
+ * "the runbook" links to LeadCatcherV2Runbook.tsx (/projects/lead-catcher-v2/runbook, 11 Nov 2026).
  * Images in public/case/lead-catcher-v2/ were redacted before they reached this repo.
  */
 
@@ -50,7 +50,7 @@ const STEPS = [
   { t: 'Ping.', d: 'I get a “🟢 New lead” email telling me who wrote and that the draft is waiting.' },
 ]
 
-const WHY = [
+const WHY: { t: string; d: ReactNode }[] = [
   {
     t: 'Make’s history alone is not proof.',
     d: 'A step that fails and is skipped still shows “Success”. So every step that can fail has its own detour: it writes the failure to the Error log, then emails me.',
@@ -73,7 +73,12 @@ const WHY = [
   },
   {
     t: 'One thing it cannot catch:',
-    d: 'if an email address is real but wrong, Gmail sends the message anyway and Make reports success. The only guard is reading every typed address letter by letter. That is in the runbook.',
+    d: (
+      <>
+        if an email address is real but wrong, Gmail sends the message anyway and Make reports success. The only guard is
+        reading every typed address letter by letter. That is in <Link to="/projects/lead-catcher-v2/runbook">the runbook</Link>.
+      </>
+    ),
   },
 ]
 

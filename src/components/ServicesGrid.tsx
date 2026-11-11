@@ -60,6 +60,7 @@ const LOOM = '/icons/tools/loom.svg'
 const FIREFLIES = '/icons/ai/fireflies.png'
 const MAKE = '/icons/tools/make.svg'
 const TALLY = '/icons/tools/tally.svg'
+const SHEETS = '/icons/tools/googlesheets.svg'
 
 type Service = {
   index: string
@@ -116,8 +117,8 @@ const SERVICES: Service[] = [
     title: 'Automation repair',
     description: 'Lead automations in Make, checked for what quietly breaks, then fixed and tested.',
     chip: 'AI Automation',
-    logos: [MAKE, TALLY, NOTION, GMAIL],
-    bullets: ['Duplicate leads stopped before saving', 'A person approves every email', 'Every fix tested and written down'],
+    logos: [MAKE, TALLY, NOTION, GMAIL, SHEETS],
+    bullets: ['Every failure logged and alerted', 'A person approves every email', 'Every fix tested and written down'],
   },
 ]
 
@@ -193,7 +194,7 @@ export default function ServicesGrid() {
         <div className="sgrid__offers">
           <div className="sgrid__offers-head">
             <h2 className="sgrid__offers-title">What I can take off your plate.</h2>
-            <p className="sgrid__offers-sub">Ten real client jobs and nineteen sample builds are on the Projects page.</p>
+            <p className="sgrid__offers-sub">Ten real client jobs and twenty sample builds are on the Projects page.</p>
           </div>
           <ul className="bento sgrid__services" role="list">
             {SERVICES.map((s) => (
