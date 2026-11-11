@@ -196,6 +196,8 @@
   color: var(--cream);
 }
 .cs__cta p { margin: 0; font-size: 15px; font-weight: 600; }
+/* A CTA inside a numbered section (lead catcher v2, 11 Nov 2026): keep its text light on navy. */
+.cs__sec .cs__cta p { margin: 0; color: var(--cream); max-width: none; }
 .cs__book {
   display: inline-flex;
   align-items: center;
