@@ -8,7 +8,7 @@
  * other files in src/data/ and at the top of each view component.
  */
 
-import { Database, ListChecks, Clock, type Icon } from '@/components/slab'
+import { EnvelopeSimple, ListChecks, Lightning, type Icon } from '@/components/slab'
 
 export type SocialLink = {
   label: string
@@ -47,20 +47,20 @@ export const profile: Profile = {
   name: 'Francis Rowenn Devis',
   firstName: 'Francis',
   handle: '@francisrowenndevis',
-  role: 'Notion Operations Specialist',
+  role: 'Executive VA · Notion · Automation',
   avatarSrc: '/francis-avatar.webp',
   verifiedLabel: 'Identity verified on Upwork',
   email: 'francisrowennd@gmail.com',
   location: 'Tarlac City, Philippines',
   stats: [
-    { value: '9', label: 'Live Notion systems', Icon: Database },
+    { value: '6,081', label: 'Conversations to inbox zero', Icon: EnvelopeSimple },
     { value: '81', label: 'Client pages audited', Icon: ListChecks },
-    { value: 'GMT+8', label: 'Philippines', Icon: Clock },
+    { value: '2', label: 'Automations tested', Icon: Lightning },
   ],
   // The intro types this line, then flies it into the Home headline.
-  displayName: { line1: 'Built to work.', line2: 'Tested to break.' },
+  displayName: { line1: 'I catch what', line2: 'quietly breaks.' },
   hero: {
-    body: 'Notion Operations Specialist and Executive VA. I build client hubs, CRMs, finance trackers and SOP libraries for small businesses, each with a guide to run it and a written list of how it breaks.',
+    body: 'Executive support, Notion systems and lead automations for small businesses. Every build ships with a guide to run it and a written list of how it breaks.',
     portraitSrc: '/francis-cutout.webp',
     portraitAlt: 'Francis Rowenn Devis',
   },
@@ -73,3 +73,10 @@ export const profile: Profile = {
 
 /** Booking link for the Get in touch button and the Contact page. */
 export const BOOKING_URL = 'https://calendly.com/francisrowennd/30min'
+
+/** The three lane buttons under the Home headline. Each opens Projects on its lane. */
+export const LANE_LINKS = [
+  { label: 'Hire an assistant', to: '/projects?lane=ea' },
+  { label: 'See Notion systems', to: '/projects?lane=notion' },
+  { label: 'Fix an automation', to: '/projects?lane=auto' },
+] as const

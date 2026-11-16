@@ -50,7 +50,7 @@ export default function AboutGrid() {
           {`Hi, I’m ${profile.firstName}.`}
         </h1>
         <p className="pgrid__lede">
-          Notion Operations Specialist and Executive VA, based in Tarlac City, Philippines.
+          Executive VA and Notion Operations Specialist, based in Tarlac City, Philippines.
         </p>
       </header>
 

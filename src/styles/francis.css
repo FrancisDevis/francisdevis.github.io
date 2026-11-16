@@ -234,9 +234,9 @@
 
 /* ---------- Phone pass on the template's 26 Sept mobile update ---------- */
 @media (max-width: 1099px) {
-  /* Headline on one line: "Built to work. Tested to break." measures about
-     13.9em in the display stack at 700 / -0.024em (see mobile-pass.css §3). */
-  :root { --headline-em: 14.4; }
+  /* Headline on one line: "I catch what quietly breaks." measures about
+     12.8em in the display stack at 700 / -0.024em (see mobile-pass.css §3). */
+  :root { --headline-em: 13.2; }
   /* A long name wraps as text, so the verified tick stays beside the last word
      instead of being pushed to the far edge. */
   .hprofile__name { display: block; }
@@ -271,3 +271,23 @@
   margin-top: 10px; padding: 8px 16px; border-radius: 999px; border: 0; cursor: pointer;
   background: var(--orange); color: #fff; font: inherit; font-weight: 600;
 }
+
+/* ---------- Home: three lane buttons under the lede (16 Nov) ---------- */
+.home__lanes { display: flex; flex-wrap: wrap; gap: 10px; margin-top: clamp(12px, 1.8vh, 20px); }
+.home__lane {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 9px 16px; border-radius: 999px;
+  border: 1px solid var(--line-strong); background: var(--white);
+  font-size: 14px; font-weight: 600; color: var(--navy); text-decoration: none;
+  transition: transform 200ms var(--ease-out), border-color 200ms var(--ease-out), opacity 620ms var(--ease-out);
+}
+.home__lane:first-child { background: var(--navy); color: var(--white); border-color: var(--navy); }
+.home__lane svg { color: var(--orange); }
+.home__lane:hover { transform: translateY(-2px); border-color: var(--navy); }
+html.is-intro .home__lanes { opacity: 0; transform: translateY(14px); }
+.home__lanes { transition: opacity 620ms var(--ease-out) 80ms, transform 760ms var(--ease-out) 80ms; }
+@media (max-width: 1099px) {
+  .home__lanes { flex-direction: column; gap: 8px; margin-top: 4px; }
+  .home__lane { justify-content: space-between; padding: 12px 16px; font-size: 15px; }
+}
+@media (prefers-reduced-motion: reduce) { .home__lane:hover { transform: none; } }

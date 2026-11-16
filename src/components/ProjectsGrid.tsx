@@ -1,5 +1,5 @@
-import { lazy, Suspense, useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { lazy, Suspense, useEffect, useRef, useState } from 'react'
+import { Link, useSearchParams } from 'react-router-dom'
 import { ArrowUpRight, ArrowRight } from '@/components/slab'
 import { systems, type NotionSystem } from '@/data/systems'
 import { eaWork, type EaWork } from '@/data/eaWork'
@@ -106,6 +106,15 @@ export default function ProjectsGrid() {
       el.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
   }
+  /** A Home lane button arrives as /projects?lane=ea|notion|auto: open on that lane. */
+  const [params] = useSearchParams()
+  const lane = params.get('lane')
+  useEffect(() => {
+    if (lane !== 'ea' && lane !== 'notion' && lane !== 'auto') return
+    const t = window.setTimeout(() => jump(`lane-${lane}`), 350)
+    return () => window.clearTimeout(t)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lane])
   const show = (w: EaWork) => {
     setOpen(w)
     dlg.current?.showModal()

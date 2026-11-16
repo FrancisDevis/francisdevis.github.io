@@ -9,7 +9,7 @@ export type QA = { q: string; a: string }
 export const FAQS: QA[] = [
   {
     q: 'What do you do?',
-    a: 'I build and fix Notion systems for small businesses: client hubs, CRMs, finance trackers, SOP libraries and team onboarding. I also do executive support: inbox, calendar and documentation.',
+    a: 'Three things for small businesses. Executive support: inbox, calendar and documentation. Notion systems: client hubs, CRMs, finance trackers and SOP libraries. Automation repair: lead automations in Make, checked for what quietly breaks.',
   },
   {
     q: 'Can I see your work first?',

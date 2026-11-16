@@ -77,7 +77,7 @@ const CLIENTS: Client[] = [
   {
     index: '02',
     name: 'Nonprofit founder',
-    role: 'Executive and personal assistant · to Jul 2026',
+    role: 'Executive and personal assistant · Jun to Sep 2026',
     daily:
       'Took the inbox from 6,081 conversations to zero, with 4,879 filed. Moved 557 tasks into Notion and set bookings and meeting notes to run without manual steps.',
     work: ['Inbox', 'Calendar', 'Notion'],

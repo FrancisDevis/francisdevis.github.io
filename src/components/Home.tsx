@@ -1,5 +1,6 @@
-import { ArrowUpRight } from '@/components/slab'
-import { profile, BOOKING_URL } from '@/data/profile'
+import { Link } from 'react-router-dom'
+import { ArrowUpRight, ArrowRight } from '@/components/slab'
+import { profile, BOOKING_URL, LANE_LINKS } from '@/data/profile'
 import ToolsMarquee from './ToolsMarquee'
 import HomeBento from './HomeBento'
 import { HomeProfile, HomeStats, HomeExplore } from './HomeMobile'
@@ -52,6 +53,14 @@ export default function Home() {
         </div>
 
         <p className="home__lede">{hero.body}</p>
+        <nav className="home__lanes" aria-label="What do you need?">
+          {LANE_LINKS.map((l) => (
+            <Link key={l.to} className="home__lane" to={l.to}>
+              {l.label}
+              <ArrowRight size={14} weight="bold" aria-hidden="true" />
+            </Link>
+          ))}
+        </nav>
         {phone && <HomeStats />}
       </div>
 

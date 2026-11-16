@@ -116,7 +116,7 @@ const SERVICES: Service[] = [
     index: '06',
     title: 'Automation repair',
     description: 'Lead automations in Make, checked for what quietly breaks, then fixed and tested.',
-    chip: 'AI Automation',
+    chip: 'Automation',
     logos: [MAKE, TALLY, NOTION, GMAIL, SHEETS],
     bullets: ['Every failure logged and alerted', 'A person approves every email', 'Every fix tested and written down'],
   },
