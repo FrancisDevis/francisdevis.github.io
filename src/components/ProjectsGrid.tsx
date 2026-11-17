@@ -6,6 +6,8 @@ import { eaWork, type EaWork } from '@/data/eaWork'
 import type { Funnel } from '@/data/funnels'
 import { useIsPhone } from '@/hooks/useMediaQuery'
 import AutoFlow, { AutoCanvas } from './AutoFlow'
+import EaBackdrop from './EaBackdrop'
+import { BOOKING_URL } from '@/data/profile'
 
 const FunnelBarrel = lazy(() => import('./FunnelBarrel'))
 
@@ -170,6 +172,8 @@ export default function ProjectsGrid() {
           <button type="button" onClick={() => jump('lane-auto')}>Automation</button>
         </nav>
 
+        <div className="ealane">
+          <EaBackdrop />
         <h2 className="lane__title" id="lane-ea">Executive support</h2>
         {EA_GROUPS.map(({ heading, note, list }) => (
           <div key={heading}>
@@ -211,6 +215,7 @@ export default function ProjectsGrid() {
             </ul>
           </div>
         ))}
+        </div>
 
         <h2 className="lane__title" id="lane-notion">Notion systems</h2>
         {!phone && BARREL.length > 0 && (
@@ -254,9 +259,16 @@ export default function ProjectsGrid() {
             </figcaption>
           </figure>
         )}
-        <button type="button" className="eadlg__close" onClick={() => dlg.current?.close()} aria-label="Close">
-          Close
-        </button>
+        <div className="eadlg__foot">
+          <p className="eadlg__ask">Want this done in your business?</p>
+          <a className="eadlg__book" href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
+            Book a 30-min call
+            <ArrowUpRight size={14} weight="bold" aria-hidden="true" />
+          </a>
+          <button type="button" className="eadlg__close" onClick={() => dlg.current?.close()} aria-label="Close">
+            Close
+          </button>
+        </div>
       </dialog>
     </section>
   )
