@@ -5,6 +5,7 @@ import { systems, type NotionSystem } from '@/data/systems'
 import { eaWork, type EaWork } from '@/data/eaWork'
 import type { Funnel } from '@/data/funnels'
 import { useIsPhone } from '@/hooks/useMediaQuery'
+import AutoFlow, { AutoCanvas } from './AutoFlow'
 
 const FunnelBarrel = lazy(() => import('./FunnelBarrel'))
 
@@ -111,8 +112,36 @@ export default function ProjectsGrid() {
   const lane = params.get('lane')
   useEffect(() => {
     if (lane !== 'ea' && lane !== 'notion' && lane !== 'auto') return
-    const t = window.setTimeout(() => jump(`lane-${lane}`), 350)
-    return () => window.clearTimeout(t)
+    // The barrel above loads late and pushes the lanes down, so one jump can land
+    // short. Jump once, then hold the lane at the top for 4 s unless the visitor scrolls.
+    const id = `lane-${lane}`
+    const t = window.setTimeout(() => jump(id), 350)
+    let stop = false
+    const cancel = () => { stop = true }
+    window.addEventListener('wheel', cancel, { passive: true })
+    window.addEventListener('touchstart', cancel, { passive: true })
+    window.addEventListener('keydown', cancel)
+    const started = Date.now()
+    const iv = window.setInterval(() => {
+      const el = document.getElementById(id)
+      const b = box.current
+      if (stop || !el || Date.now() - started > 4000) return window.clearInterval(iv)
+      if (Date.now() - started < 1300) return
+      if (b && b.scrollHeight > b.clientHeight) {
+        const off = el.getBoundingClientRect().top - b.getBoundingClientRect().top - 8
+        if (Math.abs(off) > 4) b.scrollTop += off
+      } else {
+        const off = el.getBoundingClientRect().top - 8
+        if (Math.abs(off) > 60) el.scrollIntoView({ block: 'start' })
+      }
+    }, 250)
+    return () => {
+      window.clearTimeout(t)
+      window.clearInterval(iv)
+      window.removeEventListener('wheel', cancel)
+      window.removeEventListener('touchstart', cancel)
+      window.removeEventListener('keydown', cancel)
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lane])
   const show = (w: EaWork) => {
@@ -201,13 +230,17 @@ export default function ProjectsGrid() {
           ))}
         </ul>
 
+        <div className="autolane">
+          <AutoCanvas />
         <h2 className="lane__title" id="lane-auto">Automation</h2>
         <p className="sysnote">Two tested builds: one for a fictional business, one live on this site’s contact form. Every screenshot in them comes from a real run.</p>
+        <AutoFlow />
         <ul className="sysgrid" role="list">
           {automation.map((s) => (
             <SystemCard key={s.id} s={s} />
           ))}
         </ul>
+        </div>
       </div>
 
       {/* data-lenis-prevent: without it the smooth scroll swallows the wheel and a tall image cannot be scrolled (S11). */}
