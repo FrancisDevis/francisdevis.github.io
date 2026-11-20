@@ -7,6 +7,7 @@ import type { Funnel } from '@/data/funnels'
 import { useIsPhone } from '@/hooks/useMediaQuery'
 import AutoFlow, { AutoCanvas } from './AutoFlow'
 import EaBackdrop from './EaBackdrop'
+import NotionSketch from './NotionSketch'
 import { BOOKING_URL } from '@/data/profile'
 
 const FunnelBarrel = lazy(() => import('./FunnelBarrel'))
@@ -226,6 +227,7 @@ export default function ProjectsGrid() {
         ))}
         </div>
 
+        <div className="nlane">
         <h2 className="lane__title" id="lane-notion">Notion systems</h2>
         <div className="nproof">
           <h3 className="lane__group">Delivered for a real client</h3>
@@ -251,6 +253,7 @@ export default function ProjectsGrid() {
           Demonstration systems I built from an empty page. The businesses and all the data are invented, so you can
           click anything.
         </p>
+        <NotionSketch />
         <ul className="sysgrid" role="list">
           {notion.map((s) => (
             <SystemCard key={s.id} s={s} />
@@ -266,6 +269,7 @@ export default function ProjectsGrid() {
             </div>
           </>
         )}
+        </div>
 
         <div className="autolane">
           <AutoCanvas />

@@ -5,6 +5,8 @@
 @import '@fontsource/poppins/latin-500.css';
 @import '@fontsource/poppins/latin-600.css';
 @import '@fontsource/poppins/latin-700.css';
+/* Caveat (OFL): handwriting for the Notion lane sketch only. */
+@import '@fontsource/caveat/latin-600.css';
 
 /* Reset */
 *, *::before, *::after {
