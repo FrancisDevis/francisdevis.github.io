@@ -81,6 +81,15 @@ const EA_GROUPS = [
   },
 ]
 
+/** Notion lane, real client work. Numbers from the Evidence Log, section 4. No client name, no screenshots (NDA). */
+const NOTION_PROOF = [
+  { n: '4', label: 'Client workspaces built end to end' },
+  { n: '3', label: 'More audited' },
+  { n: '18', label: 'Policies written and localised' },
+  { n: '81', label: 'Pages audited before handover' },
+  { n: '5', label: 'Days early' },
+]
+
 const notion = systems.filter((s) => (s.tag ?? 'Notion system') === 'Notion system')
 const automation = systems.filter((s) => s.tag === 'Automation')
 
@@ -218,13 +227,26 @@ export default function ProjectsGrid() {
         </div>
 
         <h2 className="lane__title" id="lane-notion">Notion systems</h2>
-        {!phone && BARREL.length > 0 && (
-          <div className="sysbarrel">
-            <Suspense fallback={<div className="funnels__barrel-skeleton" aria-hidden="true" />}>
-              <FunnelBarrel funnels={BARREL} onOpen={openLive} />
-            </Suspense>
-          </div>
-        )}
+        <div className="nproof">
+          <h3 className="lane__group">Delivered for a real client</h3>
+          <p className="sysnote">
+            Australian consultancy, June to August 2026, through the agency that placed me. Their workspaces stay private, so
+            the numbers stand in for screenshots.
+          </p>
+          <ul className="nproof__tiles" role="list">
+            {NOTION_PROOF.map((t) => (
+              <li key={t.label} className="nproof__tile">
+                <span className="nproof__n">{t.n}</span>
+                <span className="nproof__label">{t.label}</span>
+              </li>
+            ))}
+          </ul>
+          <Link className="nproof__link" to="/testimonials">
+            Read what their team said
+            <ArrowRight size={13} weight="bold" aria-hidden="true" />
+          </Link>
+        </div>
+        <h3 className="lane__group">Sample systems you can open</h3>
         <p className="sysnote">
           Demonstration systems I built from an empty page. The businesses and all the data are invented, so you can
           click anything.
@@ -234,6 +256,16 @@ export default function ProjectsGrid() {
             <SystemCard key={s.id} s={s} />
           ))}
         </ul>
+        {!phone && BARREL.length > 0 && (
+          <>
+            <p className="sysnote">Every build in one view. Drag to spin, click a page to open it.</p>
+            <div className="sysbarrel">
+              <Suspense fallback={<div className="funnels__barrel-skeleton" aria-hidden="true" />}>
+                <FunnelBarrel funnels={BARREL} onOpen={openLive} />
+              </Suspense>
+            </div>
+          </>
+        )}
 
         <div className="autolane">
           <AutoCanvas />
