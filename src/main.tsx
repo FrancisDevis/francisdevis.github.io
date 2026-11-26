@@ -16,6 +16,8 @@ const ContactGrid = lazy(() => import('@/components/ContactGrid'))
 const LeadCatcherCase = lazy(() => import('@/components/LeadCatcherCase'))
 const LeadCatcherV2Case = lazy(() => import('@/components/LeadCatcherV2Case'))
 const LeadCatcherV2Runbook = lazy(() => import('@/components/LeadCatcherV2Runbook'))
+const LeadCatcherV3Case = lazy(() => import('@/components/LeadCatcherV3Case'))
+const LeadCatcherV3Runbook = lazy(() => import('@/components/LeadCatcherV3Runbook'))
 const ExpenseTrackerCase = lazy(() => import('@/components/ExpenseTrackerCase'))
 const ToolRegisterCase = lazy(() => import('@/components/ToolRegisterCase'))
 const ExecutiveCalendarCase = lazy(() => import('@/components/ExecutiveCalendarCase'))
@@ -77,6 +79,8 @@ createRoot(container).render(
           <Route path="/projects/lead-catcher" element={<LeadCatcherCase />} />
           <Route path="/projects/lead-catcher-v2" element={<LeadCatcherV2Case />} />
           <Route path="/projects/lead-catcher-v2/runbook" element={<LeadCatcherV2Runbook />} />
+          <Route path="/projects/lead-catcher-v3" element={<LeadCatcherV3Case />} />
+          <Route path="/projects/lead-catcher-v3/runbook" element={<LeadCatcherV3Runbook />} />
           <Route path="/projects/expense-tracker" element={<ExpenseTrackerCase />} />
           <Route path="/projects/tool-register" element={<ToolRegisterCase />} />
           <Route path="/projects/executive-calendar" element={<ExecutiveCalendarCase />} />

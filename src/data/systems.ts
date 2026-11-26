@@ -41,6 +41,18 @@ export const systems: NotionSystem[] = [
     tint: '#2869AA',
   },
   {
+    id: '14',
+    image: '/systems/14.jpg',
+    kind: 'Lead capture automation, v3',
+    title: 'AI lead sorter in n8n (sample)',
+    catches: 'Gemini sorts every lead. If the AI fails, the lead is still saved and I get an alert.',
+    // On-site case study page and its runbook (26 Nov 2026). Text approved by him in the Automation chat.
+    url: '/projects/lead-catcher-v3',
+    tint: '#2F6B5B',
+    tag: 'Automation',
+    cta: 'Read the case study',
+  },
+  {
     id: '13',
     image: '/systems/13.jpg',
     kind: 'Lead capture automation, v2',

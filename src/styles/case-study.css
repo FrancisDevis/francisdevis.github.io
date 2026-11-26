@@ -199,7 +199,9 @@
 /* A CTA inside a numbered section (lead catcher v2, 11 Nov 2026): keep its text light on navy. */
 .cs__sec .cs__cta p { margin: 0; color: var(--cream); max-width: none; }
 /* A text link inside a case study list (the v2 runbook link, 11 Nov 2026), and stacked facts in one group. */
-.cs__list a { color: var(--orange); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+.cs__list a,
+.cs__sec > p a,
+.cs__facts dd a { color: var(--orange); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
 .cs__facts dd + dd { margin-top: 8px; }
 .cs__book {
   display: inline-flex;

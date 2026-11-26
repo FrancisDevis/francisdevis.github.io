@@ -23,6 +23,15 @@ const PAGES = [
     image: '/og/lead-catcher-v2.jpg',
     imageAlt: 'The Make scenario for the website lead catcher v2, every route in one view.',
   },
+  {
+    path: '/projects/lead-catcher-v3',
+    tabTitle: 'AI lead sorter in n8n (sample) · Francis Rowenn Devis',
+    title: 'When the AI failed, the lead was still saved. (Sample build)',
+    description:
+      'The whole system in n8n. The top line is a normal lead. The bottom line runs only when the AI step fails: the lead is saved anyway, and I get an alert.',
+    image: '/og/lead-catcher-v3.jpg',
+    imageAlt: 'The n8n workflow: the AI sorting step with Gemini, the normal road to a reply draft, and the failure road that saves the lead and sends an alert.',
+  },
 ]
 
 // A page with child pages (/projects/x) needs a folder in dist/. On GitHub

@@ -55,7 +55,7 @@ export const profile: Profile = {
   stats: [
     { value: '6,081', label: 'Conversations to inbox zero', Icon: EnvelopeSimple },
     { value: '81', label: 'Client pages audited', Icon: ListChecks },
-    { value: '2', label: 'Automations tested', Icon: Lightning },
+    { value: '3', label: 'Automations tested', Icon: Lightning },
   ],
   // The intro types this line, then flies it into the Home headline.
   displayName: { line1: 'I catch what', line2: 'quietly breaks.' },

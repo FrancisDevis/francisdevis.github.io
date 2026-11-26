@@ -9,11 +9,11 @@ export type QA = { q: string; a: string }
 export const FAQS: QA[] = [
   {
     q: 'What do you do?',
-    a: 'Three things for small businesses. Executive support: inbox, calendar and documentation. Notion systems: client hubs, CRMs, finance trackers and SOP libraries. Automation repair: lead automations in Make, checked for what quietly breaks.',
+    a: 'Three things for small businesses. Executive support: inbox, calendar and documentation. Notion systems: client hubs, CRMs, finance trackers and SOP libraries. Automation repair: lead automations in Make and n8n, checked for what quietly breaks.',
   },
   {
     q: 'Can I see your work first?',
-    a: 'Yes. The Projects page shows ten executive support jobs I did for a real client, with private details covered. Next to them are nine executive support sample builds in Google Sheets and Google Calendar, nine Notion systems and two tested automations. All but the website audit run on invented businesses (the travel check uses real fares, as seen on the day), so click anything you like.',
+    a: 'Yes. The Projects page shows ten executive support jobs I did for a real client, with private details covered. Next to them are nine executive support sample builds in Google Sheets and Google Calendar, nine Notion systems and three tested automations. All but the website audit run on invented businesses (the travel check uses real fares, as seen on the day), so click anything you like.',
   },
   {
     q: 'How do you price?',
