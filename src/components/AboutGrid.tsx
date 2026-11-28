@@ -64,7 +64,7 @@ export default function AboutGrid() {
           <p className="agrid__note">
             I have run a <strong>nonprofit founder's inbox</strong> from 6,081 conversations to zero, and built Notion
             workspaces for an Australian consultancy's clients, auditing 81 pages before handover. Nine executive support sample builds,
-            nine of my own Notion systems and three tested automations are{' '}
+            nine of my own Notion systems and four tested automations are{' '}
             <Link className="agrid__link" to="/projects">
               live on the Projects page
             </Link>

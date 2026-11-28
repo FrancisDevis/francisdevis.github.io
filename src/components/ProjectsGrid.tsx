@@ -25,7 +25,7 @@ const openLive = (f: Funnel) => {
 }
 
 /**
- * Projects: nine live Notion systems and three tested automations, one card each. Every card opens
+ * Projects: nine live Notion systems and four tested automations, one card each. Every card opens
  * the live page on notion.site in a new tab: the proof is the system itself,
  * not a picture of it.
  *
@@ -169,7 +169,7 @@ export default function ProjectsGrid() {
         </h1>
         <p className="pgrid__lede">
           Ten pieces of executive support I delivered for a real client, nine executive support sample builds (marked as
-          samples), nine Notion systems and three tested automations. Every system ships with a guide to run it and a written
+          samples), nine Notion systems and four tested automations. Every system ships with a guide to run it and a written
           list of how it breaks.
         </p>
       </header>
@@ -274,7 +274,7 @@ export default function ProjectsGrid() {
         <div className="autolane">
           <AutoCanvas />
         <h2 className="lane__title" id="lane-auto">Automation</h2>
-        <p className="sysnote">Three tested builds: one for a fictional business, one live on this site’s contact form, and one that sorts test leads with AI in n8n. Every screenshot in them comes from a real run.</p>
+        <p className="sysnote">Four tested builds: one for a fictional business, one live on this site’s contact form, one that sorts test leads with AI in n8n, and one that sorts an inbox with AI and pings a phone. Every screenshot in them comes from a real run.</p>
         <AutoFlow />
         <ul className="sysgrid" role="list">
           {automation.map((s) => (

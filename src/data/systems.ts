@@ -41,6 +41,18 @@ export const systems: NotionSystem[] = [
     tint: '#2869AA',
   },
   {
+    id: '15',
+    image: '/systems/15.jpg',
+    kind: 'Inbox automation, v4',
+    title: 'AI Inbox Sorter (sample)',
+    catches: 'Gemini sorts every email, labels it in Gmail, logs it once, and pings my phone only when a human is needed.',
+    // On-site case study page and its runbook (28 Nov 2026). Text from the Automation chat's draft.
+    url: '/projects/inbox-sorter-v4',
+    tint: '#3B4F8C',
+    tag: 'Automation',
+    cta: 'Read the case study',
+  },
+  {
     id: '14',
     image: '/systems/14.jpg',
     kind: 'Lead capture automation, v3',

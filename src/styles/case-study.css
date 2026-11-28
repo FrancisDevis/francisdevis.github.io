@@ -248,3 +248,11 @@
 .cs__pair-cap { margin: 8px 0 0; font-size: 12.5px; color: var(--muted); }
 .cs__limit { margin: 16px 0 0; padding: 12px 14px; border-radius: 12px; background: var(--cream, #faf7f2); font-size: 14px; line-height: 1.55; }
 @media (max-width: 1099px) { .cs__stats--5 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* v4 runbook: one block per break (the draft's three-column table, readable on a phone) */
+.rb-breaks { display: grid; gap: 10px; }
+.rb-break { padding: 12px 14px; border-radius: 14px; background: var(--white); box-shadow: inset 0 0 0 1px var(--line); }
+.rb-break p { margin: 0 0 6px; }
+.rb-break p:last-child { margin-bottom: 0; }
+.rb-break__k { display: block; font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--orange-ink); margin-bottom: 2px; }
+.cs__sec code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.9em; padding: 1px 5px; border-radius: 5px; background: color-mix(in srgb, var(--navy) 7%, transparent); }

@@ -32,6 +32,15 @@ const PAGES = [
     image: '/og/lead-catcher-v3.jpg',
     imageAlt: 'The n8n workflow: the AI sorting step with Gemini, the normal road to a reply draft, and the failure road that saves the lead and sends an alert.',
   },
+  {
+    path: '/projects/inbox-sorter-v4',
+    tabTitle: 'AI Inbox Sorter (sample) · Francis Rowenn Devis',
+    title: 'AI Inbox Sorter (Sample build)',
+    description:
+      'Gemini sorts every email, labels it in Gmail, logs it once, and pings my phone only when a human is needed.',
+    image: '/og/inbox-sorter-v4.jpg',
+    imageAlt: 'The n8n workflow for the inbox sorter: AI sorting with Gemini, the Gmail label and log, the Telegram alert and its failure road.',
+  },
 ]
 
 // A page with child pages (/projects/x) needs a folder in dist/. On GitHub
